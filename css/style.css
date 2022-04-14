@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(41, 40, 40);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    justify-content: flex-end;
+    padding: 30px 10%;
+}
+
+.logo {
+    filter: drop-shadow(0px 3px 3px black);
+    margin-right: auto;
+}
+
+.nav__links {
+    display: flex;
+    list-style: none;
+}
+
+.nav__links a {
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav__links li {
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+    color: dodgerblue;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    background-color: rgb(41, 40, 40);
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    justify-content: center;
+    font-weight: 300;
+    padding: 30px 10%;
+    width: 100%;
+}
+
+.footer a {
+    color: dodgerblue;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+/* Login */
+
+body,
+input,
+button {
+    font-family: "Inter", sans-serif;
+    outline: none;
+}
+
+.form-body {
+    background-color: #1c6acf;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+    color: #ffffff;
+    height: 500px;
+    margin: 80px;
+    overflow: hidden;
+    padding: 50px;
+    width: 400px;
+}
+
+.form-body .title {
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.button {
+    background-color: white;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    margin: 50px 20px 20px 20px;
+    padding: 10px 40px;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+}
+
+.button:hover {
+    background-color: rgb(0, 178, 104);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+    color: hsl(0, 0%, 100%);
+    letter-spacing: 3px;
+}
+
+.button:active {
+    background-color: rgb(0, 178, 104);
+    box-shadow: black 0px 0px 0px 0px;
+    color: hsl(0, 0%, 100%);
+    letter-spacing: 3px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.form-textbox {
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+    height: 35px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+}
+
+.form-fields {
+    justify-content: center;
+}
+
+.form-label {
+    margin-left: 3px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.button {
+    box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+}
