@@ -1,5 +1,6 @@
 <?php
 require 'dbConnection.php';
+session_start();
 
 function login()
 {
@@ -12,7 +13,16 @@ function login()
                 AND pass LIKE binary '$password'";
         $result = $connection->query($sql);
         $connection->close();
-
+        if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                        $_SESSION['username'] = $row['username'];
+                        $_SESSION['email'] = $row['email'];
+                        $_SESSION['password'] = $row['pass'];
+                        $_SESSION['phone'] = $row['phone'];
+                        $_SESSION['gender'] = $row['gender'];
+                        $_SESSION['joined'] = $row['reg_date'];
+                }
+        }
         return $result->num_rows > 0;
 }
 
@@ -35,9 +45,3 @@ function register()
                 return false;
         }
 }
-
-
-        // output data of each row
-        // while ($row = $result->fetch_assoc()) {
-        //     echo "id: " . $row["id"] . " - Name: " . $row["firstname"] . " " . $row["lastname"] . "<br>";
-        // }

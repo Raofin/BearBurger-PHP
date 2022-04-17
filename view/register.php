@@ -1,16 +1,5 @@
 <?php require 'header.php' ?>
 
-<header>
-    <a class="logo" href="/"><img src="img/logo.svg" alt="logo"></a>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Search Foods</a></li>
-            <li><a href="#">View Profile</a></li>
-            <li><a href="#">Sign out</a></li>
-        </ul>
-    </nav>
-</header>
 <div class="center">
     <form id="register-form" action="" method="POST" class="register-form-body">
         <h2 class="form-title">Create an Account</h2>

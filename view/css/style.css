@@ -7,8 +7,8 @@
 }
 
 html {
-    background: url(../img/background.png) no-repeat center center fixed;
     position: relative;
+    background: url(../img/background.png) no-repeat center center fixed;
     min-height: 100%;
 }
 
@@ -34,7 +34,11 @@ header {
 
 .nav-links {
     display: flex;
+    justify-items: center;
     list-style: none;
+
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-links a {
@@ -55,6 +59,14 @@ header {
 
 .nav-links li a:hover {
     color: dodgerblue;
+}
+
+.username a {
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    background-color: #fff;
+    padding: 7px 10px;
+    border-radius: 12px;
 }
 
 /* Footer */
@@ -80,8 +92,6 @@ footer {
     text-decoration: none;
     transition: all 0.3s ease 0s;
 }
-
-/* Login */
 
 body,
 input,
@@ -170,6 +180,14 @@ form a {
     width: 50%;
 }
 
+.checkbox {
+    width: 100px;
+    height: 100%;
+    margin: 0px auto;
+    margin-top: 7px;
+}
+
+
 .form-textbox {
     border: none;
     border-radius: 5px;
@@ -234,9 +252,9 @@ form a {
 
 .bottom {
     position: absolute;
-    width: 100%;
     bottom: 0px;
-    padding-bottom: 50px;
     left: 50%;
+    width: 100%;
+    padding-bottom: 50px;
     transform: translate(-50%, 0);
 }

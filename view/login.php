@@ -1,16 +1,5 @@
 <?php require 'header.php' ?>
 
-<header>
-    <a class="logo" href="/"><img src="img/logo.svg" alt="logo"></a>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Search Foods</a></li>
-            <li><a href="#">View Profile</a></li>
-            <li><a href="#">Sign out</a></li>
-        </ul>
-    </nav>
-</header>
 <div class="center">
     <form id="login-form" action="validate.php" method="POST" class="login-form-body">
         <h2 class="form-title">Log In</h2>
@@ -23,10 +12,16 @@
                 <label class="form-label">Password</label>
                 <input class="form-textbox" id="input-password" name="password" type="text" placeholder="Enter your password here">
             </div>
+            <!-- <div class="checkbox">
+                <input type="checkbox" id="remember" name="remember" value="Remember">
+                <label for="remember">Remember</label>
+            </div> -->
         </div>
-        <p class="error-message"></p>
+
 
         <div class="bottom">
+            <p class="error-message center-text"></p>
+
             <div class="center">
                 <input id="form-submit" type="submit" class="button" value="Login">
             </div>

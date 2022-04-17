@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,3 +14,23 @@
 </head>
 
 <body>
+
+    <header>
+        <a class="logo" href="/"><img src="img/logo.svg" alt="logo"></a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Search Foods</a></li>
+                <li><a href="#">View Profile</a></li>
+                <?php
+                if (isset($_SESSION['username'])) {
+                    echo "
+                    <li><a href='#'>Sign Out</a></li>
+                    <li class='username'><a href=''>{$_SESSION['username']}</a></li>";
+                } else echo "<li><a href='#'>Log In</a></li>";
+
+                ?>
+
+            </ul>
+        </nav>
+    </header>
