@@ -3,7 +3,7 @@
 <header>
     <a class="logo" href="/"><img src="img/logo.svg" alt="logo"></a>
     <nav>
-        <ul class="nav__links">
+        <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">Search Foods</a></li>
             <li><a href="#">View Profile</a></li>
@@ -12,25 +12,29 @@
     </nav>
 </header>
 <div class="center">
-    <form id="login-form" action="validate.php" method="POST" class="form-body">
-        <h2 class="title">Log in</h2>
+    <form id="login-form" action="validate.php" method="POST" class="login-form-body">
+        <h2 class="form-title">Log In</h2>
         <div>
             <div>
-                <label class="form-label">Email</label>
-                <input class="form-textbox" id="input-email" name="email" type="text" placeholder="Enter your email here">
+                <label class="form-label">Username or Email</label>
+                <input class="form-textbox" id="input-usernameOrEmail" name="usernameOrEmail" type="text" placeholder="Enter your username or email here">
             </div>
             <div>
                 <label class="form-label">Password</label>
-                <input class="form-textbox" id="input-password" name="password" type="text" placeholder="Enter password here">
+                <input class="form-textbox" id="input-password" name="password" type="text" placeholder="Enter your password here">
             </div>
         </div>
         <p class="error-message"></p>
-        <div class="center">
-            <input id="form-submit" type="submit" class="button">
+
+        <div class="bottom">
+            <div class="center">
+                <input id="form-submit" type="submit" class="button" value="Login">
+            </div>
+            <div class="center-text">
+                New here? <a href="register.php">Create an Account</a>
+            </div>
         </div>
-        <div class="center-text">
-            New here? <a href="">Create an Account</a>
-        </div>
+
     </form>
 </div>
 

@@ -7,6 +7,7 @@
 }
 
 html {
+    background: url(../img/background.png) no-repeat center center fixed;
     position: relative;
     min-height: 100%;
 }
@@ -31,12 +32,12 @@ header {
     margin-right: auto;
 }
 
-.nav__links {
+.nav-links {
     display: flex;
     list-style: none;
 }
 
-.nav__links a {
+.nav-links a {
     color: #fff;
     font-family: "Inter", sans-serif;
     font-size: 17px;
@@ -44,15 +45,15 @@ header {
     text-decoration: none;
 }
 
-.nav__links li {
+.nav-links li {
     padding: 0px 20px;
 }
 
-.nav__links li a {
+.nav-links li a {
     transition: all 0.3s ease 0s;
 }
 
-.nav__links li a:hover {
+.nav-links li a:hover {
     color: dodgerblue;
 }
 
@@ -89,41 +90,66 @@ button {
     outline: none;
 }
 
-.form-body {
-    background-color: #1c6acf;
+.login-form-body {
+    position: relative;
+    background-color: rgba(41, 40, 40, 0.74);
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
     color: #ffffff;
-    height: 500px;
+    height: 480px;
     margin: 80px;
     overflow: hidden;
     padding: 50px;
     width: 400px;
+    min-width: 400px;
 }
 
-.form-body .title {
-    font-weight: bold;
+.register-form-body {
+    position: relative;
+    background-color: rgba(41, 40, 40, 0.74);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+    color: #ffffff;
+    height: 750px;
+    margin-top: 80px;
+    margin-bottom: 130px;
+    overflow: hidden;
+    padding: 50px;
+    width: 400px;
+    min-width: 400px;
+}
+
+.form-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    font-weight: 900;
     margin: 0;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
     text-align: center;
+}
+
+form a {
+    color: dodgerblue;
+    text-decoration: none;
 }
 
 .button {
     background-color: white;
     border: 0;
     border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
     font-size: 15px;
     letter-spacing: 1.5px;
-    margin: 50px 20px 20px 20px;
+    margin: 20px;
     padding: 10px 40px;
     text-transform: uppercase;
     transition: all 0.5s ease;
+    box-shadow: rgba(68, 67, 67, 0.87) 0px 2px 8px 0px;
+
 }
 
 .button:hover {
     background-color: rgb(0, 178, 104);
-    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.801) 0px 7px 29px 0px;
     color: hsl(0, 0%, 100%);
     letter-spacing: 3px;
 }
@@ -155,10 +181,6 @@ button {
     width: 100%;
 }
 
-.form-input-error {
-    border: 2px solid rgba(255, 47, 47, 0.767);
-}
-
 .form-fields {
     justify-content: center;
 }
@@ -167,14 +189,50 @@ button {
     margin-left: 3px;
 }
 
+.radio-button {
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+    height: 35px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+}
+
+.radio-button input {
+    margin: 4px 5px 0px 0px;
+}
+
+.form-input-error {
+    box-shadow: tomato 0px 0px 5px 2px !important;
+}
+
+.radio-label {
+    color: black;
+    padding-right: 20px;
+}
+
 .center-text {
     text-align: center;
 }
 
-.button {
-    box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+.error-message {
+    color: tomato;
 }
 
 .success {
     color: green;
+}
+
+.bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    padding-bottom: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
