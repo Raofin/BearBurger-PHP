@@ -18,16 +18,19 @@ if (isset($_POST['submit'])) {
     $genderError = false;
 
     if (empty($username)) $usernameError = true;
-    if (empty($email)) $emailError = true;
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $emailError = true;
     if (empty($password)) $passwordError = true;
     if (empty($cPassword) || $cPassword !== $password) $cPasswordError = true;
-    if (empty($phone)) $phoneError = true;
+    if (empty($phone) || !is_numeric($phone)) $phoneError = true;
     if (empty($gender)) $genderError = true;
 
     if (!$usernameError && !$emailError && !$passwordError && !$cPasswordError && !$phoneError && !$genderError) {
-        echo 'nice';
+        if (register()) {
+            echo 'Registration Successful.';
+        } else
+            echo 'An error occurred while entering data into the database. Please try again.';
     } else
-        echo 'Please fill out all the fields properly.';
+        echo 'Please fill out all the fields properly';
 }
 ?>
 
@@ -47,4 +50,8 @@ if (isset($_POST['submit'])) {
     if (cPasswordError == true) $("#input-cPassword").addClass("form-input-error");
     if (phoneError == true) $("#input-phone").addClass("form-input-error");
     if (genderError == true) $("#radio-button-box").addClass("form-input-error");
+    if (!usernameError && !emailError && !passwordError && !cPasswordError && !phoneError && !genderError) {
+        $("#input-username, #input-email, #input-password, #input-cPassword, #input-phone").val("");
+        $('input[name=gender]').prop('checked', false);
+    }
 </script>

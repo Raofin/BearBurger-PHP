@@ -8,13 +8,12 @@ CREATE TABLE bearburger.users (
     email VARCHAR (30) NOT NULL UNIQUE,
     pass VARCHAR (30) NOT NULL,
     phone VARCHAR (15) NOT NULL,
-    gender VARCHAR (5) NOT NULL,
+    gender VARCHAR (6) NOT NULL,
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON
     UPDATE CURRENT_TIMESTAMP
 );
 
-INSERT INTO
-    bearburger.users (username, email, pass, phone, gender)
+INSERT INTO bearburger.users (username, email, pass, phone, gender)
 VALUES
     (
         "Raofin",
@@ -26,4 +25,4 @@ VALUES
 
 SELECT * FROM bearburger.users
 WHERE (username = 'raofin' OR email = 'hello@raofin.net')
-    AND pass LIKE binary 'asdF';
+AND pass LIKE binary 'asdF';

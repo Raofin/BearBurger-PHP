@@ -15,8 +15,8 @@ if (isset($_POST['submit'])) {
         $passwordError = true;
     if (!$usernameOrEmailError && !$passwordError) {
         if (login()) {
-            echo 'login Successfull';
-        } else echo '<span class="error-message center">login failed</span>';
+            echo 'Login Successful';
+        } else echo 'Login failed. Please try again.';
     } else
         echo 'Please fill out all the fields properly.';
 }

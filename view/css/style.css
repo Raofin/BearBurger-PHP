@@ -216,16 +216,20 @@ form a {
     padding-right: 20px;
 }
 
-.center-text {
-    text-align: center;
-}
-
 .error-message {
     color: tomato;
 }
 
 .success {
-    color: green;
+    color: rgb(5, 211, 5);
+}
+
+.success-message {
+    color: rgb(5, 211, 5);
+}
+
+.center-text {
+    text-align: center;
 }
 
 .bottom {
