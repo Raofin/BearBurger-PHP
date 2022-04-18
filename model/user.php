@@ -34,6 +34,7 @@ function login()
         $connection->close();
         if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
+                        $_SESSION['id'] = $row['id'];
                         $_SESSION['username'] = $row['username'];
                         $_SESSION['email'] = $row['email'];
                         $_SESSION['password'] = $row['pass'];
@@ -57,6 +58,7 @@ function cookieLogin()
         $connection->close();
         if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
+                        $_SESSION['id'] = $row['id'];
                         $_SESSION['username'] = $row['username'];
                         $_SESSION['email'] = $row['email'];
                         $_SESSION['password'] = $row['pass'];
@@ -67,4 +69,33 @@ function cookieLogin()
                 $_SESSION['loggedIn'] = true;
         }
         return $result->num_rows > 0;
+}
+
+function update()
+{
+        foreach ($_POST as $item) {
+                if ($item === '') {
+                        echo '<h3 style="color:tomato;">Please fill out all the fields properly.</h3>';
+                        return;
+                }
+        }
+
+        try {
+                $connection = connect();
+                $sql = "UPDATE bearburger.users
+                        SET username='{$_POST['username']}', email='{$_POST['email']}', pass='{$_POST['password']}', phone='{$_POST['phone']}'
+                        WHERE email='{$_SESSION['email']}'";
+
+                $connection->query($sql);
+                $connection->close();
+
+                $_SESSION['username'] = $_POST['username'];
+                $_SESSION['email'] = $_POST['email'];
+                $_SESSION['password'] = $_POST['password'];
+                $_SESSION['phone'] = $_POST['phone'];
+
+                header("location: ../View/profile.php");
+                die();
+        } catch (Exception) {
+        }
 }

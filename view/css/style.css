@@ -207,6 +207,58 @@ form a {
     margin-left: 3px;
 }
 
+.form-user-profile {
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgba(41, 40, 40, 0.74);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+    color: #ffffff;
+    height: 100%;
+    margin: 80px;
+    overflow: hidden;
+    padding: 50px;
+    width: 460px;
+    min-width: 400px;
+}
+
+.form-user-profile h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 35px;
+    font-weight: 900;
+    margin: 0;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.form-user-profile td:nth-child(1) {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.form-user-profile td:nth-child(2) {
+    text-align: left;
+}
+
+.form-user-profile td input {
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+    height: 25px;
+    padding: 2px;
+    width: 100%;
+    font-size: 15px
+}
+
+.form-user-profile td {
+    padding-bottom: 5px;
+}
+
+.form-user-profile table {
+    margin-bottom: 10px;
+}
+
 .radio-button {
     display: flex;
     justify-content: center;

@@ -26,3 +26,7 @@ VALUES
 SELECT * FROM bearburger.users
 WHERE (username = 'raofin' OR email = 'hello@raofin.net')
 AND pass LIKE binary 'asdF';
+
+UPDATE bearburger.users
+SET username=$_POST['username'], email=$_POST['email'], email=$_POST['password'], email=$_POST['phone']
+WHERE email=$_SESSION['email'];

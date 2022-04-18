@@ -14,19 +14,19 @@ verifyNotLoggedIn();
                 </tr>
                 <tr>
                     <td>Username:</td>
-                    <td><?php echo $_SESSION['username'] ?></td>
+                    <td><input type="text" id="username" name="username" value="<?php echo $_SESSION['username'] ?>"></td>
                 </tr>
                 <tr>
                     <td>Email:</td>
-                    <td><?php echo $_SESSION['email'] ?></td>
+                    <td><input type="text" id="email" name="email" value="<?php echo $_SESSION['email'] ?>"></td>
                 </tr>
                 <tr>
                     <td>Password:</td>
-                    <td><?php echo $_SESSION['password'] ?></td>
+                    <td><input type="password" id="password" name="password" value="<?php echo $_SESSION['password'] ?>"></td>
                 </tr>
                 <tr>
                     <td>Phone:</td>
-                    <td><?php echo $_SESSION['phone'] ?></td>
+                    <td><input type="text" id="phone" name="phone" value="<?php echo $_SESSION['phone'] ?>"></td>
                 </tr>
                 <tr>
                     <td>Gender:</td>
@@ -39,13 +39,9 @@ verifyNotLoggedIn();
             </table>
         </center>
         <br>
-        <input type="submit" value="Modify Details" class="button" style="margin: 0;">
+        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') update() ?>
+        <input type="submit" value="Update" class="button" style="margin: 0;">
     </form>
 </div>
-
-<?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    header("location: profileModify.php");
-    die();
-} ?>
 
 <?php require 'footer.php' ?>

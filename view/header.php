@@ -28,15 +28,15 @@ verifyCookie();
                 <?php
                 if (isset($_SESSION['username'])) {
                     echo "
-                    <li><a href=''>Home</a></li>
-                    <li><a href=''>Search Foods</a></li>
-                    <li><a href=''>View Profile</a></li>
-                    <li><a href=''>About</a></li>
+                    <li><a href='home.php'>Home</a></li>
+                    <li><a href='searchFoods.php'>Search Foods</a></li>
+                    <li><a href='profile.php'>View Profile</a></li>
+                    <li><a href='about.php'>About</a></li>
                     <li><a href='../controller/logout.php'>Log Out</a></li>
-                    <li class='username'><a href=''>{$_SESSION['username']}</a></li>";
+                    <li class='username'><a href='profile.php'>{$_SESSION['username']}</a></li>";
                 } else {
                     echo "
-                    <li><a href=''>About</a></li>
+                    <li><a href='about.php'>About</a></li>
                     <li><a href='login.php'>Log In</a></li>
                     <li><a href='register.php'>Register</a></li>";
                 }
