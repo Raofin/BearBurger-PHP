@@ -310,3 +310,49 @@ form a {
     padding-bottom: 50px;
     transform: translate(-50%, 0);
 }
+
+.food-container {
+    position: relative;
+    background-color: rgba(41, 40, 40, 0.74);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+    color: #ffffff;
+    height: 100%;
+    margin: 80px;
+    margin-bottom: 140px;
+    overflow: hidden;
+    padding: 50px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.food-container h1 {
+    padding-bottom: 5px;
+    filter: drop-shadow(5px 3px 5px black);
+    -webkit-filter: drop-shadow(5px 3px 5px black);
+}
+
+.food-box {
+    background-color: rgb(0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+    border-radius: 10px;
+    height: 100%;
+    width: 370px;
+    padding: 35px;
+}
+
+.food-container .button {
+    height: 30px;
+    padding-top: 5px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.food-container h3,
+p {
+    padding-bottom: 5px
+}
+
+.food-container td {
+    padding: 20px;
+}

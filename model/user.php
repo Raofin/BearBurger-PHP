@@ -99,3 +99,14 @@ function update()
         } catch (Exception) {
         }
 }
+
+function pay()
+{
+        foreach ($_POST as $item) {
+                if ($item === '') {
+                        echo '<p style="color:tomato; margin-botton: 10px">Please fill out all the fields properly.<br></p>';
+                        return;
+                }
+        }
+        echo '<p style="margin-bottom: 10px; color: rgb(5, 211, 5);"> Payment Successful<br></p>';
+}
