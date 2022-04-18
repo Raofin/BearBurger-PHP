@@ -15,9 +15,9 @@ if (isset($_POST['submit'])) {
         $passwordError = true;
     if (!$usernameOrEmailError && !$passwordError) {
         if (login()) {
-            echo 'Login Successful';
             setcookie("RememberedUser", $usernameOrEmail, time() + (86400 * 30), "/");
-            var_dump($_SESSION['username']);
+            echo "<script> location.href='../view/home.php'; </script>";
+            die();
         } else echo 'Login failed. Please try again.';
     } else
         echo 'Please fill out all the fields properly.';

@@ -1,4 +1,7 @@
-<?php require 'header.php' ?>
+<?php
+require 'header.php';
+verifyLoggedIn();
+?>
 
 <div class="center">
     <form id="login-form" action="validate.php" method="POST" class="login-form-body">
@@ -10,7 +13,7 @@
             </div>
             <div>
                 <label class="form-label">Password</label>
-                <input class="form-textbox" id="input-password" name="password" type="text" placeholder="Enter your password here">
+                <input class="form-textbox" id="input-password" name="password" type="password" placeholder="Enter your password here">
             </div>
             <!-- <div class="checkbox">
                 <input type="checkbox" id="remember" name="remember" value="Remember">

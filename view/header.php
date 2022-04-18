@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php
+session_start();
+require '../controller/pageProtect.php';
+verifyCookie();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,19 +21,25 @@
 <body>
 
     <header>
-        <a class="logo" href="/"><img src="img/logo.svg" alt="logo"></a>
+        <a class="logo" href="home.php"><img src="img/logo.svg" alt="logo"></a>
+
         <nav>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Search Foods</a></li>
-                <li><a href="#">View Profile</a></li>
                 <?php
                 if (isset($_SESSION['username'])) {
                     echo "
-                    <li><a href='#'>Sign Out</a></li>
+                    <li><a href=''>Home</a></li>
+                    <li><a href=''>Search Foods</a></li>
+                    <li><a href=''>View Profile</a></li>
+                    <li><a href=''>About</a></li>
+                    <li><a href='../controller/logout.php'>Log Out</a></li>
                     <li class='username'><a href=''>{$_SESSION['username']}</a></li>";
-                } else echo "<li><a href='#'>Log In</a></li>";
-
+                } else {
+                    echo "
+                    <li><a href=''>About</a></li>
+                    <li><a href='login.php'>Log In</a></li>
+                    <li><a href='register.php'>Register</a></li>";
+                }
                 ?>
 
             </ul>

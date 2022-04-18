@@ -1,4 +1,7 @@
-<?php require 'header.php' ?>
+<?php
+require 'header.php';
+verifyLoggedIn();
+?>
 
 <div class="center">
     <form id="register-form" action="" method="POST" class="register-form-body">
