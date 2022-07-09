@@ -1,3 +1,5 @@
+<script src="js/external.js"></script>
+
 </body>
 
 <footer class="footer">
