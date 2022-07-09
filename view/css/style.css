@@ -356,3 +356,113 @@ p {
 .food-container td {
     padding: 20px;
 }
+
+.review-container {
+    position: relative;
+    background-color: rgba(41, 40, 40, 0.74);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+    color: #ffffff;
+    height: 100%;
+    margin: 80px;
+    margin-bottom: 140px;
+    overflow: hidden;
+    padding: 50px 100px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+
+.review-container h1 {
+    padding-bottom: 15px;
+    filter: drop-shadow(5px 3px 5px black);
+    -webkit-filter: drop-shadow(5px 3px 5px black);
+}
+
+.review-box {
+    background-color: rgb(0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    padding: 35px;
+}
+
+.review-input {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.reviews {
+    padding: 10px;
+    margin: 20px;
+    background-color: rgb(0, 40, 80);
+    border-radius: 5px;
+
+}
+
+.review-box div,
+h3,
+p,
+tr {
+    text-align: left;
+
+}
+
+.food-container h2 {
+    margin-top: 10px
+}
+
+.food-container a {
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px;
+    color: dodgerblue;
+}
+
+.about {
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgba(41, 40, 40, 0.74);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+    color: #ffffff;
+    height: 100%;
+    margin: 80px;
+    overflow: hidden;
+    padding: 50px;
+    width: 600px;
+    min-width: 400px;
+}
+
+.search-inputbox {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+}
+
+.white-back-text {
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    background-color: #fff;
+    padding: 2px 10px;
+    border-radius: 12px;
+}
+
+.currency-text a {
+    padding: 10px;
+}

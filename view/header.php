@@ -29,7 +29,7 @@ verifyCookie();
                 if (isset($_SESSION['username'])) {
                     echo "
                     <li><a href='home.php'>Home</a></li>
-                    <li><a href='searchFoods.php'>Search Foods</a></li>
+                    <li><a href='search.php'>Search Foods</a></li>
                     <li><a href='profile.php'>View Profile</a></li>
                     <li><a href='about.php'>About</a></li>
                     <li><a href='../controller/logout.php'>Log Out</a></li>

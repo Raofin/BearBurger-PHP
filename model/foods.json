@@ -1,0 +1,156 @@
+[{
+        "title": "Cheese Burger",
+        "description": "Prepared with beef patty, cheese, burger sauce, pickles & onion.",
+        "price": "690",
+        "id": 1
+    },
+    {
+        "title": "Bacon Cheese Burger",
+        "description": "Prepared with beef patty, 2 slices cheese, bacon & burger sauce",
+        "price": "600",
+        "id": 2
+    },
+    {
+        "title": "Double Cheese Burger",
+        "description": "Prepared with pan fried chicken breast cooked in creamy garlic mushroom, served with fried rice & sauteed vegetables.",
+        "price": "460",
+        "id": 3
+    },
+    {
+        "title": "Lil Smoke Burger",
+        "description": "Prepared with ham & cheese stuffed fried chicken breast, served with mashed potato & sauteed vegetable.",
+        "price": "830",
+        "id": 4
+    },
+    {
+        "title": "Big Smoke",
+        "description": "Prepared with chili, garlic & butter sauteed spicy mushroom.",
+        "price": "590",
+        "id": 5
+    },
+    {
+        "title": "Grilled Chicken Burger",
+        "description": "Prepared with chicken, tomato, cucumber, bell pepper & apple lettuce tossed with lemon.",
+        "price": "450",
+        "id": 6
+    },
+    {
+        "title": "Seafood Burger",
+        "description": "Prepared with fettucine tossed in spicy tomato butter sauce with sauteed salmon, prawn & squid.",
+        "price": "570",
+        "id": 7
+    },
+    {
+        "title": "Cheesy Baked Burger",
+        "description": "Prepared with baked penne pasta in mushroom & chicken topped with mozzarella.",
+        "price": "600",
+        "id": 8
+    },
+    {
+        "title": "Salmon Steak",
+        "description": "Prepared with grilled salmon steak with fries & sauteed vegetables.",
+        "price": "450",
+        "id": 9
+    },
+    {
+        "title": "Beef Tenderloin Steak",
+        "description": "Served with sauteed vegetables, pepper sauce & a choice of fried rice or mashed potato.",
+        "price": "680",
+        "id": 10
+    },
+    {
+        "title": "Grill Chicken",
+        "description": "Prepared with beef patty, cheese, burger sauce, pickles & onion.",
+        "price": "690",
+        "id": 1
+    },
+    {
+        "title": "Chicken Fry",
+        "description": "Prepared with beef patty, 2 slices cheese, bacon & burger sauce",
+        "price": "600",
+        "id": 2
+    },
+    {
+        "title": "Chicken Wings",
+        "description": "Prepared with pan fried chicken breast cooked in creamy garlic mushroom, served with fried rice & sauteed vegetables.",
+        "price": "460",
+        "id": 3
+    },
+    {
+        "title": "Naga Buffalo Chicken",
+        "description": "Prepared with ham & cheese stuffed fried chicken breast, served with mashed potato & sauteed vegetable.",
+        "price": "830",
+        "id": 4
+    },
+    {
+        "title": "Tinder Chicken Strips",
+        "description": "Prepared with chili, garlic & butter sauteed spicy mushroom.",
+        "price": "590",
+        "id": 5
+    },
+    {
+        "title": "Chicken Wings Coated",
+        "description": "Perfectly cooked tender chicken wings coated in a delicious suace",
+        "price": "450",
+        "id": 6
+    }, {
+        "title": "Crispy Chicken Burger",
+        "description": "This crispy chicken burger with honey mustard sauce makes for a crunchy goodness, served with potato juice.",
+        "price": "690",
+        "id": 1
+    },
+    {
+        "title": "Mexican Grilled Chicken",
+        "description": "Prepared with spicy mexican seasoning marinated grilled chicken leg, served with fried rice & sauteed vegetable.",
+        "price": "320",
+        "id": 2
+    },
+    {
+        "title": "Creamy Mushroom Chicken",
+        "description": "Prepared with pan fried chicken breast cooked in creamy garlic mushroom, served with fried rice & sauteed vegetables.",
+        "price": "360",
+        "id": 3
+    },
+    {
+        "title": "Chicken Cordon",
+        "description": "Prepared with ham & cheese stuffed fried chicken breast, served with mashed potato & sauteed vegetable.",
+        "price": "480",
+        "id": 4
+    },
+    {
+        "title": "Spicy Garlic Mushroom",
+        "description": "Prepared with chili, garlic & butter sauteed spicy mushroom.",
+        "price": "600",
+        "id": 5
+    },
+    {
+        "title": "Grilled Chicken Salad",
+        "description": "Prepared with chicken, tomato, cucumber, bell pepper & apple lettuce tossed with lemon.",
+        "price": "400",
+        "id": 6
+    },
+    {
+        "title": "Seafood Fettucine",
+        "description": "Prepared with fettucine tossed in spicy tomato butter sauce with sauteed salmon, prawn & squid.",
+        "price": "500",
+        "id": 7
+    },
+    {
+        "title": "Cheesy Baked Pasta",
+        "description": "Prepared with baked penne pasta in mushroom & chicken topped with mozzarella.",
+        "price": "360",
+        "id": 8
+    },
+    {
+        "title": "Salmon Steak",
+        "description": "Prepared with grilled salmon steak with fries & sauteed vegetables.",
+        "price": "450",
+        "id": 9
+    },
+    {
+        "title": "Beef Tenderloin Steak",
+        "description": "Served with sauteed vegetables, pepper sauce & a choice of fried rice or mashed potato.",
+        "price": "680",
+        "id": 10
+    }
+]

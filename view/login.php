@@ -4,7 +4,7 @@ verifyLoggedIn();
 ?>
 
 <div class="center">
-    <form id="login-form" action="validate.php" method="POST" class="login-form-body">
+    <form id="login-form" action="/controller/validation/login-validate.php" method="POST" class="login-form-body">
         <h2 class="form-title">Log In</h2>
         <div>
             <div>
@@ -15,12 +15,7 @@ verifyLoggedIn();
                 <label class="form-label">Password</label>
                 <input class="form-textbox" id="input-password" name="password" type="password" placeholder="Enter your password here">
             </div>
-            <!-- <div class="checkbox">
-                <input type="checkbox" id="remember" name="remember" value="Remember">
-                <label for="remember">Remember</label>
-            </div> -->
         </div>
-
 
         <div class="bottom">
             <p class="error-message center-text"></p>

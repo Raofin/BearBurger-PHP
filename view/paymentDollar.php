@@ -8,7 +8,7 @@ verifyNotLoggedIn();
         <h1>Food Details</h1>
         <h3 style="padding-bottom: 10px;">Cheese Burger</h3>
         <p style="padding-bottom: 10px;">Prepared with beef patty, cheese, burger sauce, pickles & onion.</p>
-        <h3>Price: <span class="white-back-text">690tk</span> </h3>
+        <h3>Price: <span class="white-back-text">$7.99</span> </h3>
         <br>
         <div class="currency-text">
             <h3 class="">Pay using<a href="payment.php">Taka</a><a href="paymentDollar.php">Dollar</a><a href="paymentPound.php">Pound</a></h3>

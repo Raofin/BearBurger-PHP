@@ -11,8 +11,16 @@ verifyNotLoggedIn();
 
         <h2 class="catagory-title">Catagory: <a href="home.php">Burger</a><a href="homeChicken.php">Chicken</a><a href="homeOthers.php">Others</a></h2>
         <table>
-            <?php loadFoods('foodsBurger.json'); ?>
+            <?php loadFoods('foodsChicken.json'); ?>
         </table>
+
+        <div>
+
+        </div>
+
+        <div>
+
+        </div>
     </div>
 </center>
 
