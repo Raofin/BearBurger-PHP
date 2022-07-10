@@ -46,4 +46,6 @@ verifyNotLoggedIn();
     </form>
 </div>
 
+<script src="js/payment.js"></script>
+
 <?php require 'footer.php' ?>

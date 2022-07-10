@@ -27,8 +27,9 @@ verifyLoggedIn();
                 New here? <a href="register.php">Create an Account</a>
             </div>
         </div>
-
     </form>
 </div>
+
+<script src="js/login.js"></script>
 
 <?php require 'footer.php' ?>

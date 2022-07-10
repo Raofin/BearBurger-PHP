@@ -51,4 +51,6 @@ verifyLoggedIn();
     </form>
 </div>
 
+<script src="js/registration.js"></script>
+
 <?php require 'footer.php' ?>
