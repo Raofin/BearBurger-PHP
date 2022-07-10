@@ -11,7 +11,7 @@ function verifyCookie()
 function verifyLoggedIn()
 {
     if (isset($_SESSION['loggedIn'])) {
-        header("location: home.php");
+        header("location: home.php?cat=Burger");
         die();
     }
 }

@@ -1,7 +1,4 @@
-<?php
-require 'header.php';
-// verifyNotLoggedIn();
-?>
+<?php require 'header.php' ?>
 
 <div class="center ">
     <div class="about">

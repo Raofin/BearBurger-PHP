@@ -3,7 +3,6 @@ session_start();
 require '../controller/pageProtect.php';
 require '../model/foods.php';
 verifyCookie();
-
 ?>
 
 <!DOCTYPE html>
@@ -21,14 +20,14 @@ verifyCookie();
 <body>
 
     <header>
-        <a class="logo" href="home.php"><img src="img/logo.svg" alt="logo"></a>
+        <a class="logo" href="home.php?cat=Burger"><img src="img/logo.svg" alt="logo"></a>
 
         <nav>
             <ul class="nav-links">
                 <?php
                 if (isset($_SESSION['username'])) {
                     echo "
-                    <li><a href='home.php'>Home</a></li>
+                    <li><a href='home.php?cat=Burger'>Home</a></li>
                     <li><a href='search.php'>Search Foods</a></li>
                     <li><a href='profile.php'>View Profile</a></li>
                     <li><a href='about.php'>About</a></li>

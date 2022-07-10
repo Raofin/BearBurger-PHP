@@ -1,14 +1,15 @@
 <?php
 require 'header.php';
 verifyNotLoggedIn();
+fetchFoodDetails($_REQUEST['id']);
 ?>
 
 <div class="center">
-    <form class="form-user-profile payment" name="a" method="post">
+    <form class="form-user-profile payment" method="post">
         <h1>Food Details</h1>
-        <h3 style="padding-bottom: 10px;">Cheese Burger</h3>
-        <p style="padding-bottom: 10px;">Prepared with beef patty, cheese, burger sauce, pickles & onion.</p>
-        <h3>Price: <span id="price" class="white-back-text">690tk</span> </h3>
+        <h3 style="padding-bottom: 10px;"> <?php echo isset($_SESSION['foodTitle']) ? $_SESSION['foodTitle'] : 'Food Title (No food selected)'; ?> </h3>
+        <p style="padding-bottom: 10px;"><?php echo isset($_SESSION['foodDescription']) ? $_SESSION['foodDescription'] : 'Food Description (No food selected)'; ?></p>
+        <h3>Price: <span id="price" class="white-back-text"><?php echo isset($_SESSION['foodDescription']) ? $_SESSION['foodPrice'] : '00'; ?>tk</span></h3>
         <br>
         <div class="currency-text">
             <h3 class="">Pay using
@@ -41,7 +42,7 @@ verifyNotLoggedIn();
         </center>
         <div id="message" class="center-text"></div>
         <br>
-        <!-- <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') pay() ?> -->
+        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') pay() ?>
         <input type="submit" value="Pay" class="button" style="margin: 0;">
     </form>
 </div>

@@ -1,7 +1,29 @@
 let form = document.querySelector('form');
 let messageDiv = document.getElementById('message')
+let price = document.getElementById('price').innerText.slice(0, -2);
 
-let test = function (event) {
+document.getElementById('taka').addEventListener('click',
+    function (event) {
+        event.preventDefault();
+        document.getElementById('price').innerText = price + 'tk';
+    },
+    false);
+
+document.getElementById('dollar').addEventListener('click',
+    function (event) {
+        event.preventDefault();
+        document.getElementById('price').innerText = '$' + (price * 0.011);
+    },
+    false);
+
+document.getElementById('pound').addEventListener('click',
+    function (event) {
+        event.preventDefault();
+        document.getElementById('price').innerText = '£' + (price * 0.0089);
+    },
+    false);
+
+form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     let name = document.getElementById('name');
@@ -24,39 +46,9 @@ let test = function (event) {
     if (name.value != '' && cardNumber.value != '' && expDate.value != '' && cvv.value != '') {
         messageDiv.innerHTML = '';
         messageDiv.innerHTML += '<p class="success-message center-text center-text">Payment Successful.</p>';
-        name.value = '';
-        cardNumber.value = '';
-        expDate.value = '';
-        cvv.value = '';
+        name.value = cardNumber.value = expDate.value = cvv.value = '';
     } else {
         messageDiv.innerHTML = '';
         messageDiv.innerHTML += '<p class="error-message center-text">Please fill out all the fields properly.</p>';
     }
-};
-
-let currency = 69;
-
-document.getElementById('taka').addEventListener('click',
-    function (event) {
-        event.preventDefault();
-        document.getElementById('price').innerText = currency + 'tk';
-    },
-    false);
-
-document.getElementById('dollar').addEventListener('click',
-    function (event) {
-        event.preventDefault();
-        document.getElementById('price').innerText = '$' + (currency * 0.011);
-    },
-    false);
-
-document.getElementById('pound').addEventListener('click',
-    function (event) {
-        event.preventDefault();
-        document.getElementById('price').innerText = '£' + (currency * 0.0089);
-    },
-    false);
-
-
-
-form.addEventListener('submit', test);
+});

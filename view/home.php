@@ -10,26 +10,19 @@ verifyNotLoggedIn();
 
         <form method="post">
             <h2 class="catagory-title">
-                Catagory: <a id="cat-burger" href="">Burger</a>
-                <a type="submit" id="cat-pizza" name="cat-pizza" href="">Pizza</a>
-                <a id="cat-drinks" href="">Drinks</a>
-                <a id="cat-coffee" href="">Coffee</a>
-                <a id="cat-desert" href="">Desert</a>
-                <a id="cat-sides" href="">Sides</a>
+                Catagory:
+                <a id="cat-burger" href="home.php?cat=Burger">Burger</a>
+                <a id="cat-pizza" href="home.php?cat=Pizza">Pizza</a>
+                <a id="cat-drinks" href="home.php?cat=Drinks">Drinks</a>
+                <a id="cat-coffee" href="home.php?cat=Coffee">Coffee</a>
+                <a id="cat-desert" href="home.php?cat=Desert">Desert</a>
+                <a id="cat-sides" href="home.php?cat=Sides">Sides</a>
             </h2>
         </form>
         <table id="foods-table">
-            <?php fetchFoods('Burger') ?>
+            <?php fetchFoods($_REQUEST["cat"]) ?>
         </table>
     </div>
 </center>
-
-<script>
-    document.getElementById('cat-drinks').addEventListener('click', function() {
-            event.preventDefault();
-            document.getElementById('foods-table').innerHTML = "";
-        },
-        false);
-</script>
 
 <?php require 'footer.php' ?>

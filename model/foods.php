@@ -2,17 +2,16 @@
 
 function fetchFoods($catagory)
 {
-    $connection = connect();
+    $mysqli = connect();
     $query = "SELECT * FROM bearburger.foods
               WHERE catagory = '$catagory'";
 
-    $result = $connection->query($query);
-    $connection->close();
+    $data = $mysqli->query($query);
+    $mysqli->close();
 
     $newLine = true;
-    if ($result->num_rows > 0)
-        while ($row = $result->fetch_assoc()) {
-            if ($newLine == true) echo '<tr>';
+    if ($data->num_rows > 0)
+        while ($row = $data->fetch_assoc()) {
             echo '         
             <td>   
                 <div class="food-box">
@@ -21,7 +20,7 @@ function fetchFoods($catagory)
                     <h4>Price: ' . $row['price'] . 'tk</h4>
                     <center>
                         <div class="">
-                        <a href="payment.php"><button type="button" class="button">Buy</button></a><a href="foodReview.php"><button type="button" class="button">Review</button></a>
+                        <a href="payment.php?id=' . $row['id'] . '"><button type="button" class="button">Buy</button></a><a href="foodReview.php"><button type="button" class="button">Review</button></a>
                         </div>                    
                     </center>
                 </div>
@@ -32,6 +31,19 @@ function fetchFoods($catagory)
                 $newLine = true;
             } else $newLine = false;
         }
+}
 
-    return $result->num_rows > 0;
+function fetchFoodDetails($id)
+{
+    $mysqli = connect();
+    $query = "SELECT * FROM bearburger.foods
+              WHERE id = '$id'";
+
+    $data = $mysqli->query($query);
+    $mysqli->close();
+
+    $row = $data->fetch_assoc();
+    $_SESSION['foodTitle'] = $row['title'];
+    $_SESSION['foodDescription'] = $row['description'];
+    $_SESSION['foodPrice'] = $row['price'];
 }
