@@ -35,7 +35,7 @@ verifyNotLoggedIn();
                 </tr>
                 <tr>
                     <td>Code CVV</td>
-                    <td><input type="password" id="cvv" name="cvv" value="" placeholder="Enter your code cvv"></td>
+                    <td><input type="password" id="cvv" name="cvv" value="" placeholder="Enter your code cvv" autocomplete="on"></td>
                 </tr>
             </table>
         </center>

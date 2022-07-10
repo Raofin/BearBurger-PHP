@@ -1,6 +1,6 @@
 <?php
 require 'header.php';
-verifyNotLoggedIn();
+// verifyNotLoggedIn();
 ?>
 
 <div class="center ">

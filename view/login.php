@@ -13,7 +13,7 @@ verifyLoggedIn();
             </div>
             <div>
                 <label class="form-label">Password</label>
-                <input class="form-textbox" id="input-password" name="password" type="password" placeholder="Enter your password here">
+                <input class="form-textbox" id="input-password" name="password" type="password" placeholder="Enter your password here" autocomplete="on">
             </div>
         </div>
 

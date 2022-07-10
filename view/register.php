@@ -17,11 +17,11 @@ verifyLoggedIn();
             </div>
             <div>
                 <label class="form-label">Password</label>
-                <input class="form-textbox" id="input-password" name="password" type="password" placeholder="Enter your password here">
+                <input class="form-textbox" id="input-password" name="password" type="password" placeholder="Enter your password here" autocomplete="off">
             </div>
             <div>
                 <label class="form-label">Confirm Password</label>
-                <input class="form-textbox" id="input-cPassword" name="cPassword" type="password" placeholder="Rewrite the password here">
+                <input class="form-textbox" id="input-cPassword" name="cPassword" type="password" placeholder="Rewrite the password here" autocomplete="off">
             </div>
             <div>
                 <label class="form-label">Phone Number</label>
