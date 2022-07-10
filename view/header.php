@@ -1,6 +1,7 @@
 <?php
 session_start();
 require '../controller/pageProtect.php';
+require '../model/foods.php';
 verifyCookie();
 
 ?>
@@ -40,7 +41,6 @@ verifyCookie();
                     <li><a href='register.php'>Register</a></li>";
                 }
                 ?>
-
             </ul>
         </nav>
     </header>

@@ -53,7 +53,6 @@ $(document).ready(function () {
     });
 });
 
-let inputs = document.forms['a'].getElementsByTagName('input');
 let messageDiv = document.getElementById('message')
 
 let test = function (event) {
@@ -63,7 +62,6 @@ let test = function (event) {
     let cardNumber = document.getElementById('cardNumber');
     let expDate = document.getElementById('expDate');
     let cvv = document.getElementById('cvv');
-
 
     if (name.value == '') name.classList.add('form-input-error');
     else name.classList.remove('form-input-error');
@@ -112,6 +110,7 @@ document.getElementById('pound').addEventListener('click',
         document.getElementById('price').innerText = '£' + (currency * 0.0089);
     },
     false);
+
 
 
 form.addEventListener('submit', test);
