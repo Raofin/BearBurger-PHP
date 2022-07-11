@@ -466,3 +466,5 @@ tr {
 .currency-text a {
     padding: 10px;
 }
+
+.category-title a { cursor: pointer; }

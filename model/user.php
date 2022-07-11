@@ -1,6 +1,26 @@
 <?php
 
-require 'dbConnection.php';
+require_once 'dbConnection.php';
+
+function register()
+{
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $phone = $_POST['phone'];
+    $gender = isset($_POST['gender']) ? $_POST['gender'] : "";
+
+    try {
+        $connection = connect();
+        $sql = "INSERT INTO bearburger.users (username, email, pass, phone, gender) 
+                VALUES ('$username', '$email', '$password', '$phone', '$gender');";
+        $connection->query($sql);
+        $connection->close();
+        return true;
+    } catch (Exception) {
+        return false;
+    }
+}
 
 function login()
 {

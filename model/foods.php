@@ -1,5 +1,10 @@
 <?php
 
+require_once 'dbConnection.php';
+
+if (isset($_REQUEST['cat']))
+    fetchFoods($_REQUEST['cat']);
+
 function fetchFoods($catagory)
 {
     $mysqli = connect();
@@ -9,7 +14,7 @@ function fetchFoods($catagory)
     $data = $mysqli->query($query);
     $mysqli->close();
 
-    $newLine = true;
+    $newLine = 1;
     if ($data->num_rows > 0)
         while ($row = $data->fetch_assoc()) {
             echo '         
@@ -26,10 +31,10 @@ function fetchFoods($catagory)
                 </div>
             </td>';
 
-            if ($newLine !== true) {
+            if ($newLine !== 1) {
                 echo '</tr>';
-                $newLine = true;
-            } else $newLine = false;
+                $newLine = 1;
+            } else $newLine = 0;
         }
 }
 
