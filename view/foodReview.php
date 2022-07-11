@@ -1,83 +1,73 @@
 <?php
-require 'header.php';
-verifyNotLoggedIn();
+    require 'header.php';
+    verifyNotLoggedIn();
 ?>
-<center>
-    <div class="review-container">
-        <h1 style="text-align: center;">Cheese Burger - Review</h1>
+    <center>
+        <div class="review-container">
+            <h1 style="text-align: center;">Cheese Burger - Review</h1>
 
-        <table>
-            <form method="POST" id="comment_form">
-                <tr>
-                    <div class="review-box">
-                        <div id="display_comment"></div>
+            <table>
+                <form method="POST" id="comment-form">
+                    <tr>
+                        <div class="review-box">
+                            <div id="display_comment"></div>
 
-                        <textarea name="comment_content" id="comment_content" rows="3" class="review-input" placeholder="Enter your review here..."></textarea>
+                            <textarea class="review-input" id="comment" name="comment" placeholder="Enter your review here..."
+                                      rows="3"></textarea>
 
-                        <span id="comment_message"></span>
-                        <br />
-                        <center>
-                            <input type="submit" name="submit" id="submit" class="button" value="POST">
-                        </center>
-                    </div>
-                    <td>
-
-                    </td>
-                </tr>
-            </form>
-
-        </table>
-
-        <div>
-
+                            <span id="comment_message"></span>
+                            <br/>
+                            <center>
+                                <input id="comment-id" name="comment-id" type="hidden" value="0"/>
+                                <input class="button" id="submit" name="submit" type="submit" value="POST">
+                            </center>
+                        </div>
+                    </tr>
+                </form>
+            </table>
         </div>
+    </center>
+    <script>
+        $(document).ready(function () {
+            load_comment();
 
-        <div>
+            $('#comment-form').on('submit', function (event) {
+                event.preventDefault();
+                let form_data = $(this).serialize();
 
-        </div>
-    </div>
-</center>
-<script>
-    $(document).ready(function() {
-
-        $('#comment_form').on('submit', function(event) {
-            event.preventDefault();
-            var form_data = $(this).serialize();
-            $.ajax({
-                url: "add_comment.php",
-                method: "POST",
-                data: form_data,
-                dataType: "JSON",
-                success: function(data) {
-                    if (data.error != '') {
-                        $('#comment_form')[0].reset();
-                        $('#comment_message').html(data.error);
-                        $('#comment_id').val('0');
-                        load_comment();
+                $.ajax({
+                    url: "/model/comment.php?type=post",
+                    method: "POST",
+                    data: form_data,
+                    dataType: "JSON",
+                    success: data => {
+                        console.log(data['promptMessage']);
+                        if (data['promptMessage'] !== '') {
+                            $('#comment-form')[0].reset();
+                            $('#comment_message').html(data['promptMessage']);
+                            $('#comment-id').val('0');
+                            load_comment();
+                        }
                     }
-                }
-            })
+                })
+            });
+
+            function load_comment() {
+                $.ajax({
+                    url: "/model/comment.php?type=load",
+                    method: "POST",
+                    success: function (data) {
+                        $('#display_comment').html(data);
+                    }
+                })
+            }
+
+            $(document).on('click', '.reply', function () {
+                var comment_id = $(this).attr("id");
+                $('#comment_id').val(comment_id);
+                $('#comment_name').focus();
+            });
         });
-
-        load_comment();
-
-        function load_comment() {
-            $.ajax({
-                url: "fetch_comment.php",
-                method: "POST",
-                success: function(data) {
-                    $('#display_comment').html(data);
-                }
-            })
-        }
-
-        $(document).on('click', '.reply', function() {
-            var comment_id = $(this).attr("id");
-            $('#comment_id').val(comment_id);
-            $('#comment_name').focus();
-        });
-
-    });
-</script>
+    </script>
 
 <?php require 'footer.php' ?>
