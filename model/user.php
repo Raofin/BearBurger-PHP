@@ -17,7 +17,7 @@ function register()
         $connection->query($sql);
         $connection->close();
         return true;
-    } catch (Exception) {
+    } catch (Exception $ex) {
         return false;
     }
 }
@@ -97,7 +97,7 @@ function update()
 
         header("location: ../View/profile.php");
         die();
-    } catch (Exception) {
+    } catch (Exception $ex) {
     }
 }
 

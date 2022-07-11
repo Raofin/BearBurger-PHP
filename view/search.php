@@ -1,22 +1,23 @@
 <?php
-require 'header.php';
-require '../Controller/searchFoods.php';
-verifyNotLoggedIn();
+    require 'header.php';
+    require '../Controller/searchFoods.php';
+    verifyNotLoggedIn();
 ?>
 
-<center>
-    <div class="food-container">
-        <h1 style="text-align: center;">Order Your Favourite Foods!</h1>
+    <center>
+        <div class="food-container">
+            <h1 style="text-align: center">Order Your Favourite Foods!</h1>
 
-        <form action="" method="post" novalidate>
-            <input type="text" name="search" placeholder="Type anything to search" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" class="search-inputbox"><br><br>
-            <input type="submit" value="Search" class="button">
-        </form>
+            <form action="" method="post">
+                <label for="search-box"></label>
+                <input class="search-inputbox" id="search-box"
+                       placeholder="Type anything to search"
+                       spellcheck="false" type="text"><br><br>
+            </form>
+            <table id="foods-table"></table>
+        </div>
+    </center>
 
-        <br><br>
-        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') search(); ?>
-        <br><br>
-    </div>
-</center>
+    <script src="js/search.js"></script>
 
 <?php include 'footer.php'; ?>
