@@ -1,56 +1,61 @@
 <?php
-require 'header.php';
-verifyLoggedIn();
+    require 'header.php';
+    verifyLoggedIn();
 ?>
 
-<div class="center">
-    <form id="register-form" action="" method="POST" class="register-form-body">
-        <h2 class="form-title">Create an Account</h2>
-        <div>
+    <div class="center">
+        <form id="register-form" action="" method="POST" class="register-form-body">
+            <h2 class="form-title">Create an Account</h2>
             <div>
-                <label class="form-label">Username</label>
-                <input class="form-textbox" id="input-username" name="username" type="text" placeholder="Enter your username here">
-            </div>
-            <div>
-                <label class="form-label">Email</label>
-                <input class="form-textbox " id="input-email" name="email" type="text" placeholder="Enter your email here">
-            </div>
-            <div>
-                <label class="form-label">Password</label>
-                <input class="form-textbox" id="input-password" name="password" type="password" placeholder="Enter your password here" autocomplete="off">
-            </div>
-            <div>
-                <label class="form-label">Confirm Password</label>
-                <input class="form-textbox" id="input-cPassword" name="cPassword" type="password" placeholder="Rewrite the password here" autocomplete="off">
-            </div>
-            <div>
-                <label class="form-label">Phone Number</label>
-                <input class="form-textbox" id="input-phone" name="phone" type="text" placeholder="Enter your phone number here">
-            </div>
-            <div class="radio">
-                <label>Gender</label>
-                <div class="radio-button" id="radio-button-box">
-                    <input type="radio" id="male" name="gender" value="Male">
-                    <label for="male" class="radio-label">Male</label>
-                    <input type="radio" id="female" name="gender" value="Female">
-                    <label for="female" class="radio-label">Female</label>
+                <div>
+                    <label class="form-label">Username</label>
+                    <input class="form-textbox" id="username" name="username"
+                           placeholder="Enter your username here" type="text" autofocus>
+                </div>
+                <div>
+                    <label class="form-label">Email</label>
+                    <input class="form-textbox" id="email" name="email"
+                           placeholder="Enter your email here" type="text">
+                </div>
+                <div>
+                    <label class="form-label">Password</label>
+                    <input autocomplete="off" class="form-textbox" id="password" name="password"
+                           placeholder="Enter your password here" type="password">
+                </div>
+                <div>
+                    <label class="form-label">Confirm Password</label>
+                    <input autocomplete="off" class="form-textbox" id="cPassword" name="cPassword"
+                           placeholder="Rewrite the password here" type="password">
+                </div>
+                <div>
+                    <label class="form-label">Phone Number</label>
+                    <input class="form-textbox" id="phone" name="phone"
+                           placeholder="Enter your phone number here" type="text">
+                </div>
+                <div class="radio">
+                    <label>Gender</label>
+                    <div class="radio-button" id="radio-button-box">
+                        <input id="male" name="gender" type="radio" value="Male">
+                        <label class="radio-label" for="male">Male</label>
+                        <input id="female" name="gender" type="radio" value="Female">
+                        <label class="radio-label" for="female">Female</label>
+                    </div>
                 </div>
             </div>
-        </div>
-        <p class="error-message"></p>
+            <p class="error-message" id="prompt-message"></p>
 
-        <div class="bottom">
-            <div class="center">
-                <input id="form-submit" type="submit" class="button" value="Register">
+            <div class="bottom">
+                <div class="center">
+                    <input class="button" id="submit" name="submit" type="submit" value="Register">
+                </div>
+                <div class="center-text">
+                    Already have an account? <a href="login.php">Login</a>
+                </div>
             </div>
-            <div class="center-text">
-                Already have an account? <a href="login.php">Login</a>
-            </div>
-        </div>
 
-    </form>
-</div>
+        </form>
+    </div>
 
-<script src="js/registration.js"></script>
+    <script src="js/register.js"></script>
 
 <?php require 'footer.php' ?>

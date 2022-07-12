@@ -32,19 +32,19 @@
 <script>
     $("#input-username, #input-email, #input-password, #input-cPassword, #input-phone, #radio-button-box").removeClass("form-input-error");
 
-    var usernameError = "<?php echo $usernameError; ?>";
-    var emailError = "<?php echo $emailError; ?>";
-    var passwordError = "<?php echo $passwordError; ?>";
-    var cPasswordError = "<?php echo $cPasswordError; ?>";
-    var phoneError = "<?php echo $phoneError; ?>";
-    var genderError = "<?php echo $genderError; ?>";
+    let usernameError = "<?php echo $usernameError; ?>";
+    let emailError = "<?php echo $emailError; ?>";
+    let passwordError = "<?php echo $passwordError; ?>";
+    let cPasswordError = "<?php echo $cPasswordError; ?>";
+    let phoneError = "<?php echo $phoneError; ?>";
+    let genderError = "<?php echo $genderError; ?>";
 
-    if (usernameError == true) $("#input-username").addClass("form-input-error");
-    if (emailError == true) $("#input-email").addClass("form-input-error");
-    if (passwordError == true) $("#input-password").addClass("form-input-error");
-    if (cPasswordError == true) $("#input-cPassword").addClass("form-input-error");
-    if (phoneError == true) $("#input-phone").addClass("form-input-error");
-    if (genderError == true) $("#radio-button-box").addClass("form-input-error");
+    if (usernameError) $("#input-username").addClass("form-input-error");
+    if (emailError) $("#input-email").addClass("form-input-error");
+    if (passwordError) $("#input-password").addClass("form-input-error");
+    if (cPasswordError) $("#input-cPassword").addClass("form-input-error");
+    if (phoneError) $("#input-phone").addClass("form-input-error");
+    if (genderError) $("#radio-button-box").addClass("form-input-error");
     if (!usernameError && !emailError && !passwordError && !cPasswordError && !phoneError && !genderError) {
         $("#input-username, #input-email, #input-password, #input-cPassword, #input-phone").val("");
         $('input[name=gender]').prop('checked', false);

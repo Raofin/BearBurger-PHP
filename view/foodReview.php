@@ -42,7 +42,6 @@
                     data: form_data,
                     dataType: "JSON",
                     success: data => {
-                        console.log(data['promptMessage']);
                         if (data['promptMessage'] !== '') {
                             $('#comment-form')[0].reset();
                             $('#comment_message').html(data['promptMessage']);
