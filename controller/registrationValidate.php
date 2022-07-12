@@ -1,6 +1,7 @@
 <?php
 
     require '../model/user.php';
+    require_once 'stringValidate.php';
 
     $username = removeWhitespaces($_POST['username']);
     $email = removeWhitespaces($_POST['email']);
@@ -8,17 +9,6 @@
     $cPassword = removeWhitespaces($_POST['cPassword']);
     $phone = removeWhitespaces($_POST['phone']);
     $gender = isset($_POST['gender']) ? $_POST['gender'] : "";
-
-    function checkLength($string, $minLength)
-    {
-        $length = strlen($string);
-        return $length > $minLength && $length < 16;
-    }
-
-    function removeWhitespaces($string)
-    {
-        return preg_replace('/\s+/', '', $string);
-    }
 
     if (
         checkLength($username, 3) &&

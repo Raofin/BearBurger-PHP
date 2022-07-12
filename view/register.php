@@ -56,6 +56,6 @@
         </form>
     </div>
 
-    <script src="js/register.js"></script>
+    <script src="js/registrationValidate.js"></script>
 
 <?php require 'footer.php' ?>

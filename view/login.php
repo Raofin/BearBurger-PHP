@@ -9,18 +9,18 @@
             <div>
                 <div>
                     <label class="form-label">Username or Email</label>
-                    <input class="form-textbox" id="input-usernameOrEmail" name="usernameOrEmail" type="text"
-                           placeholder="Enter your username or email here" autofocus>
+                    <input autofocus class="form-textbox" id="usernameOrEmail" name="usernameOrEmail"
+                           placeholder="Enter your username or email here" type="text">
                 </div>
                 <div>
                     <label class="form-label">Password</label>
-                    <input class="form-textbox" id="input-password" name="password" type="password"
-                           placeholder="Enter your password here" autocomplete="on">
+                    <input autocomplete="on" class="form-textbox" id="password" name="password"
+                           placeholder="Enter your password here" type="password">
                 </div>
             </div>
 
             <div class="bottom">
-                <p class="error-message center-text"></p>
+                <p class="error-message center-text" id="prompt-message"></p>
 
                 <div class="center">
                     <input id="form-submit" type="submit" class="button" value="Login">
@@ -32,6 +32,6 @@
         </form>
     </div>
 
-    <script src="js/login.js"></script>
+    <script src="js/loginValidate.js"></script>
 
 <?php require 'footer.php' ?>
