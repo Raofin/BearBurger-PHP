@@ -11,8 +11,8 @@
     function fetchFoods($category)
     {
         $mysqli = connect();
-        $query = "SELECT * FROM bearburger.foods
-                  WHERE catagory = '$category'";
+        $query = "SELECT * FROM Foods
+                  WHERE Category = '$category'";
 
         $data = $mysqli->query($query);
         $mysqli->close();
@@ -23,12 +23,12 @@
                 echo '         
             <td>   
                 <div class="food-box">
-                    <h3>' . $row['title'] . '</h3>
-                    <p>' . $row['description'] . '</p>
-                    <h4>Price: ' . $row['price'] . 'tk</h4>
+                    <h3>' . $row['Title'] . '</h3>
+                    <p>' . $row['Description'] . '</p>
+                    <h4>Price: ' . $row['Price'] . 'tk</h4>
                     <center>
                         <div class="">
-                        <a href="payment.php?id=' . $row['id'] . '"><button type="button" class="button">Buy</button></a><a href="foodReview.php"><button type="button" class="button">Review</button></a>
+                        <a href="payment.php?id=' . $row['FoodID'] . '"><button type="button" class="button">Buy</button></a><a href="foodReview.php"><button type="button" class="button">Review</button></a>
                         </div>                    
                     </center>
                 </div>
@@ -45,8 +45,8 @@
     function searchFoods($foodTitle)
     {
         $mysqli = connect();
-        $query = "SELECT * FROM bearburger.foods 
-                  WHERE title LIKE '%$foodTitle%'";
+        $query = "SELECT * FROM Foods 
+                  WHERE Title LIKE '%$foodTitle%'";
 
         $data = $mysqli->query($query);
         $mysqli->close();
@@ -57,12 +57,12 @@
                 echo '         
             <td>   
                 <div class="food-box">
-                    <h3>' . $row['title'] . '</h3>
-                    <p>' . $row['description'] . '</p>
-                    <h4>Price: ' . $row['price'] . 'tk</h4>
+                    <h3>' . $row['Title'] . '</h3>
+                    <p>' . $row['Description'] . '</p>
+                    <h4>Price: ' . $row['Price'] . 'tk</h4>
                     <center>
                         <div>
-                        <a href="payment.php?id=' . $row['id'] . '"><button type="button" class="button">Buy</button></a>
+                        <a href="payment.php?id=' . $row['FoodID'] . '"><button type="button" class="button">Buy</button></a>
                         <a href="foodReview.php"><button type="button" class="button">Review</button></a>
                         </div>                    
                     </center>
@@ -79,14 +79,14 @@
     function fetchFoodDetails($id)
     {
         $mysqli = connect();
-        $query = "SELECT * FROM bearburger.foods
-                  WHERE id = '$id'";
+        $query = "SELECT * FROM Foods
+                  WHERE FoodID = '$id'";
 
         $data = $mysqli->query($query);
         $mysqli->close();
 
         $row = $data->fetch_assoc();
-        $_SESSION['foodTitle'] = $row['title'];
-        $_SESSION['foodDescription'] = $row['description'];
-        $_SESSION['foodPrice'] = $row['price'];
+        $_SESSION['foodTitle'] = $row['Title'];
+        $_SESSION['foodDescription'] = $row['Description'];
+        $_SESSION['foodPrice'] = $row['Price'];
     }

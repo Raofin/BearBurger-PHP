@@ -1,113 +1,91 @@
 <?php
 
-require_once 'dbConnection.php';
+    require_once 'dbConnection.php';
 
-function register()
-{
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $phone = $_POST['phone'];
-    $gender = isset($_POST['gender']) ? $_POST['gender'] : "";
+    // user register
+    function register()
+    {
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $phoneNumber = $_POST['phone'];
+        $gender = isset($_POST['gender']) ? $_POST['gender'] : "";
 
-    try {
-        $connection = connect();
-        $sql = "INSERT INTO bearburger.users (username, email, pass, phone, gender) 
-                VALUES ('$username', '$email', '$password', '$phone', '$gender');";
-        $connection->query($sql);
-        $connection->close();
-        return true;
-    } catch (Exception $ex) {
-        return false;
+        $query = "INSERT INTO Users (Username, Email, Password, PhoneNumber, Gender, Spent) 
+                  VALUES ('$username', '$email', '$password', '$phoneNumber', '$gender', 0);";
+
+        executeQuery($query);
     }
-}
 
-function login()
-{
-    $usernameOrEmail = $_POST['usernameOrEmail'];
-    $password = $_POST['password'];
-    $connection = connect();
+    // login using username or email, and password
+    function login()
+    {
+        $usernameOrEmail = isset($_POST['email']) ? $_POST['email'] : $_POST['usernameOrEmail'];
+        $password = $_POST['password'];
+        $query = "SELECT * FROM Users
+                  WHERE (Username = '$usernameOrEmail' OR Email = '$usernameOrEmail')
+                  AND Password LIKE BINARY '$password'";
 
-    $sql = "SELECT * FROM bearburger.users
-            WHERE (username = '$usernameOrEmail' OR email = '$usernameOrEmail')
-            AND pass LIKE binary '$password'";
-    $result = $connection->query($sql);
-    $connection->close();
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $_SESSION['id'] = $row['id'];
-            $_SESSION['username'] = $row['username'];
-            $_SESSION['email'] = $row['email'];
-            $_SESSION['password'] = $row['pass'];
-            $_SESSION['phone'] = $row['phone'];
-            $_SESSION['gender'] = $row['gender'];
-            $_SESSION['joined'] = $row['reg_date'];
+        return sessionLogin($query);
+    }
+
+    // login using remembered user
+    function cookieLogin()
+    {
+        $rememberedUser = $_COOKIE["RememberedUser"];
+        $query = "SELECT * FROM Users
+                  WHERE Username = '$rememberedUser' OR email = '$rememberedUser'";
+
+        return sessionLogin($query);
+    }
+
+    // store user details in the session variables
+    function sessionLogin($query)
+    {
+        $mysqliResult = executeQuery($query);
+
+        if ($mysqliResult->num_rows > 0) {
+            while ($row = $mysqliResult->fetch_assoc()) {
+                $_SESSION['id'] = $row['UserID'];
+                $_SESSION['username'] = $row['Username'];
+                $_SESSION['email'] = $row['Email'];
+                $_SESSION['password'] = $row['Password'];
+                $_SESSION['phone'] = $row['PhoneNumber'];
+                $_SESSION['gender'] = $row['Gender'];
+                $_SESSION['joined'] = $row['RegDate'];
+            }
+            $_SESSION['loggedIn'] = true;
         }
-        $_SESSION['loggedIn'] = true;
-    }
-    return $result->num_rows > 0;
-}
-
-function cookieLogin()
-{
-    $RememberedUser = $_COOKIE["RememberedUser"];
-    $connection = connect();
-
-    $sql = "SELECT * FROM bearburger.users
-            WHERE username = '$RememberedUser' OR email = '$RememberedUser'";
-    $result = $connection->query($sql);
-    $connection->close();
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $_SESSION['id'] = $row['id'];
-            $_SESSION['username'] = $row['username'];
-            $_SESSION['email'] = $row['email'];
-            $_SESSION['password'] = $row['pass'];
-            $_SESSION['phone'] = $row['phone'];
-            $_SESSION['gender'] = $row['gender'];
-            $_SESSION['joined'] = $row['reg_date'];
-        }
-        $_SESSION['loggedIn'] = true;
-    }
-    return $result->num_rows > 0;
-}
-
-function update()
-{
-    foreach ($_POST as $item) {
-        if ($item === '') {
-            echo '<h3 style="color:tomato;">Please fill out all the fields properly.</h3>';
-            return;
-        }
+        return $mysqliResult->num_rows > 0;
     }
 
-    try {
-        $connection = connect();
-        $sql = "UPDATE bearburger.users
-                SET username='{$_POST['username']}', email='{$_POST['email']}', pass='{$_POST['password']}', phone='{$_POST['phone']}'
-                WHERE email='{$_SESSION['email']}'";
+    // update user details
+    function update()
+    {
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $phoneNumber = $_POST['phone'];
+        $oldEmail = $_SESSION['email'];
 
-        $connection->query($sql);
-        $connection->close();
+        $query = "UPDATE Users
+                  SET Username='$username', Email='$email', Password='$password', PhoneNumber='$phoneNumber'
+                  WHERE email='$oldEmail'";
 
-        $_SESSION['username'] = $_POST['username'];
-        $_SESSION['email'] = $_POST['email'];
-        $_SESSION['password'] = $_POST['password'];
-        $_SESSION['phone'] = $_POST['phone'];
+        executeQuery($query);
+        login();
 
         header("location: ../View/profile.php");
         die();
-    } catch (Exception $ex) {
     }
-}
 
-function pay()
-{
-    foreach ($_POST as $item) {
-        if ($item === '') {
-            echo '<p style="color:tomato; margin-botton: 10px">Please fill out all the fields properly.<br></p>';
-            return;
+    function pay()
+    {
+        foreach ($_POST as $item) {
+            if ($item === '') {
+                echo '<p style="color:tomato; margin-botton: 10px">Please fill out all the fields properly.<br></p>';
+                return;
+            }
         }
+        echo '<p style="margin-bottom: 10px; color: rgb(5, 211, 5);"> Payment Successful<br></p>';
     }
-    echo '<p style="margin-bottom: 10px; color: rgb(5, 211, 5);"> Payment Successful<br></p>';
-}

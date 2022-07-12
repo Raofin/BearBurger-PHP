@@ -1,8 +1,8 @@
 <?php
-session_start();
-require '../controller/pageProtect.php';
-require '../model/foods.php';
-verifyCookie();
+    session_start();
+    require '../controller/pageProtect.php';
+    require '../model/foods.php';
+    verifyCookie();
 ?>
 
 <!DOCTYPE html>
@@ -13,21 +13,21 @@ verifyCookie();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" type="text/css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
     <title>Bear Burger</title>
 </head>
 
 <body>
 
-    <header>
-        <a class="logo" href="home.php?cat=Burger"><img src="img/logo.svg" alt="logo"></a>
+<header>
+    <a class="logo" href="home.php"><img src="img/logo.svg" alt="logo"></a>
 
-        <nav>
-            <ul class="nav-links">
-                <?php
+    <nav>
+        <ul class="nav-links">
+            <?php
                 if (isset($_SESSION['username'])) {
                     echo "
-                    <li><a href='home.php?cat=Burger'>Home</a></li>
+                    <li><a href='home.php'>Home</a></li>
                     <li><a href='search.php'>Search Foods</a></li>
                     <li><a href='profile.php'>View Profile</a></li>
                     <li><a href='about.php'>About</a></li>
@@ -39,7 +39,7 @@ verifyCookie();
                     <li><a href='login.php'>Log In</a></li>
                     <li><a href='register.php'>Register</a></li>";
                 }
-                ?>
-            </ul>
-        </nav>
-    </header>
+            ?>
+        </ul>
+    </nav>
+</header>

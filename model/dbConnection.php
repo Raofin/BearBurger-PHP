@@ -1,16 +1,24 @@
 <?php
 
-function connect()
-{
-    $serverName = "localhost";
-    $userName = "root";
-    $password = "";
+    function connect()
+    {
+        $hostname = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "BearBurger";
 
-    $connection = new mysqli($serverName, $userName, $password);
+        $mysqli = new mysqli($hostname, $username, $password, $database);
 
-    if ($connection->connect_error) {
-        die("Connection Error: $connection->connect_error");
+        if ($mysqli->connect_error)
+            die("Connection Error: $mysqli->connect_error");
+
+        return $mysqli;
     }
 
-    return $connection;
-}
+    function executeQuery($query)
+    {
+        $connection = connect();
+        $mysqliResult = $connection->query($query);
+        $connection->close();
+        return $mysqliResult;
+    }

@@ -15,12 +15,12 @@ CREATE TABLE Users
     Password    VARCHAR(30) NOT NULL,
     PhoneNumber VARCHAR(15) NOT NULL,
     Gender      VARCHAR(6)  NOT NULL,
-    Spend       INT,
+    Spent       INT,
     RegDate     TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 # insert user data
-INSERT INTO Users (Username, Email, Password, PhoneNumber, Gender, Spend)
+INSERT INTO Users (Username, Email, Password, PhoneNumber, Gender, Spent)
 VALUES ('Raofin', 'hello@raofin.net', 'asdF', '+8801234567890', 'male', 6801),
        ('Bill Gates', 'billgates@outlook.com', 'billgates68457', '+6963343233', 'male', 9960),
        ('Elon Musk', 'elonmusk@yahoo.com', 'elon123', '+9668508170248', 'male', 7856),

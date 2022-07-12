@@ -1,37 +1,32 @@
 <?php
 
-require '../../model/user.php';
+    require '../../model/user.php';
 
-if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $cPassword = $_POST['cPassword'];
-    $phone = $_POST['phone'];
-    $gender = isset($_POST['gender']) ? $_POST['gender'] : "";
+    if (isset($_POST['submit'])) {
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $cPassword = $_POST['cPassword'];
+        $phone = $_POST['phone'];
+        $gender = isset($_POST['gender']) ? $_POST['gender'] : "";
 
-    $usernameError = false;
-    $emailError = false;
-    $passwordError = false;
-    $cPasswordError = false;
-    $phoneError = false;
-    $genderError = false;
+        $usernameError = false;
+        $emailError = false;
+        $passwordError = false;
+        $cPasswordError = false;
+        $phoneError = false;
+        $genderError = false;
 
-    if (empty($username)) $usernameError = true;
-    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $emailError = true;
-    if (empty($password)) $passwordError = true;
-    if (empty($cPassword) || $cPassword !== $password) $cPasswordError = true;
-    if (empty($phone) || !is_numeric($phone)) $phoneError = true;
-    if (empty($gender)) $genderError = true;
+        if (empty($username)) $usernameError = true;
+        if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $emailError = true;
+        if (empty($password)) $passwordError = true;
+        if (empty($cPassword) || $cPassword !== $password) $cPasswordError = true;
+        if (empty($phone) || !is_numeric($phone)) $phoneError = true;
+        if (empty($gender)) $genderError = true;
 
-    if (!$usernameError && !$emailError && !$passwordError && !$cPasswordError && !$phoneError && !$genderError) {
-        if (register()) {
-            echo 'Registration Successful.';
-        } else
-            echo 'An error occurred while entering data into the database. Please try again.';
-    } else
-        echo 'Please fill out all the fields properly';
-}
+        if (!$usernameError && !$emailError && !$passwordError && !$cPasswordError && !$phoneError && !$genderError) register();
+        else echo 'Please fill out all the fields properly';
+    }
 ?>
 
 <script>

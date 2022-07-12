@@ -12,7 +12,8 @@
                         <div class="review-box">
                             <div id="display_comment"></div>
 
-                            <textarea class="review-input" id="comment" name="comment" placeholder="Enter your review here..."
+                            <textarea class="review-input" id="comment" name="comment"
+                                      placeholder="Enter your review here..."
                                       rows="3"></textarea>
 
                             <span id="comment_message"></span>
@@ -36,7 +37,7 @@
                 let form_data = $(this).serialize();
 
                 $.ajax({
-                    url: "/model/comment.php?type=post",
+                    url: '/model/comment.php?type=post',
                     method: "POST",
                     data: form_data,
                     dataType: "JSON",
@@ -54,7 +55,7 @@
 
             function load_comment() {
                 $.ajax({
-                    url: "/model/comment.php?type=load",
+                    url: '/model/comment.php?type=load',
                     method: "POST",
                     success: function (data) {
                         $('#display_comment').html(data);
