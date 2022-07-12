@@ -1,5 +1,5 @@
 $('#register-form').validate({
-    submitHandler: function (form) {
+    submitHandler: form => {
         let formData = $('#register-form').serialize();
 
         $.ajax({
@@ -26,7 +26,7 @@ $('#register-form').validate({
             // email: true,
             emailRegex: true,
             minlength: 6,
-            maxlength: 15,
+            maxlength: 30,
             normalizer: value => removeWhitespaces(value, '#email')
         },
         password: {
@@ -56,25 +56,28 @@ $('#register-form').validate({
     messages: {
         username: {
             required: "Please enter a username",
-            minlength: "Your username must consist of at least 4 characters"
+            minlength: "Your username must consist of at least 4 characters",
+            maxlength: "Your username must be no more than 15 characters long"
+        },
+        email: {
+            required: "Please enter email address",
+            maxlength: "Your email must be no more than 30 characters long"
         },
         password: {
             required: "Please provide a password",
-            minlength: "Your password must be at least 6 characters long"
+            minlength: "Your password must be at least 6 characters long",
+            maxlength: "Your password must be no more than 15 characters long"
         },
         cPassword: {
             required: "Please provide a password",
-            equalTo: "Please enter the same password as above"
+            equalTo: "Please enter the same password as above",
         },
-        email: "Please enter a valid email address",
         gender: "Please select your gender",
     },
     errorClass: 'form-input-error',
     errorPlacement(error, element) {
         // $(this.errorElement).addClass('form-input-error');
-
     }
-
 
     // success: function (label, element) {
     //     element.removeClass('form-input-error');
