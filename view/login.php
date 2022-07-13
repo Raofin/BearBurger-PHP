@@ -1,31 +1,44 @@
 <?php
-    require 'header.php';
-    verifyLoggedIn();
+require 'header.php';
+verifyLoggedIn();
 ?>
 
-    <div class="center">
-        <form id="login-form" action="/controller/validation/login-validate.php" method="POST" class="login-form-body">
+    <div class="form-container">
+        <form id="login-form" method="POST">
             <h2 class="form-title">Log In</h2>
-            <div>
+
+            <fieldset>
                 <div>
-                    <label class="form-label">Username or Email</label>
-                    <input autofocus class="form-textbox" id="usernameOrEmail" name="usernameOrEmail"
+                    <label for="usernameOrEmail">Username or Email</label>
+                    <input autofocus class="form-input-box" id="usernameOrEmail" name="usernameOrEmail"
                            placeholder="Enter your username or email here" type="text">
+                    <p id="error"></p>
+                    <!--                    <p class="warning-message">Username must be at least 7 characters!</p>-->
                 </div>
                 <div>
-                    <label class="form-label">Password</label>
-                    <input autocomplete="on" class="form-textbox" id="password" name="password"
+                    <label for="password">Password</label>
+                    <div class="show-password">
+                        <span id="password-view">Show</span>
+                    </div>
+                    <input id="password" name="password" autocomplete="on" class="form-input-box"
                            placeholder="Enter your password here" type="password">
+                    <p id="error"></p>
+                    <!--                    <p class="warning-message">Your username must be no more than 15 characters long</p>-->
                 </div>
-            </div>
+                <div class="remember-me">
+                    <input id="remember" name="remember" type="checkbox"/>
+                    <label for="remember">Remember Me</label>
+                </div>
+            </fieldset>
 
             <div class="bottom">
-                <p class="error-message center-text" id="prompt-message"></p>
-
+                <div class="center-text">
+                    <p id="prompt-message"></p>
+                </div>
                 <div class="center">
                     <input id="form-submit" type="submit" class="button" value="Login">
                 </div>
-                <div class="center-text">
+                <div class="center-text bottom-text">
                     New here? <a href="register.php">Create an Account</a>
                 </div>
             </div>

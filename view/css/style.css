@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 * {
     box-sizing: border-box;
@@ -7,13 +7,13 @@
 }
 
 html {
-    position: relative;
+    /*position: relative;*/
     background: url(../img/background.png) no-repeat center center fixed;
-    min-height: 100%;
+    /*min-height: 100%;*/
 }
 
 body {
-    min-height: 100vh;
+    /*min-height: 100vh;*/
 }
 
 /* Navigation Bar */
@@ -21,32 +21,32 @@ body {
 header {
     display: flex;
     align-items: center;
-    background-color: rgb(41, 40, 40);
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     justify-content: flex-end;
     padding: 30px 10%;
+    background-color: rgb(41, 40, 40);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .logo {
-    filter: drop-shadow(0px 3px 3px black);
     margin-right: auto;
+    filter: drop-shadow(0px 3px 3px black);
 }
 
 .nav-links {
     display: flex;
-    justify-items: center;
-    list-style: none;
-
     align-items: center;
     justify-content: center;
+
+    list-style: none;
+    justify-items: center;
 }
 
 .nav-links a {
-    color: #fff;
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 17px;
     font-weight: 500;
     text-decoration: none;
+    color: #fff;
 }
 
 .nav-links li {
@@ -62,141 +62,125 @@ header {
 }
 
 .username a {
-    color: rgb(0, 0, 0);
     font-weight: 800;
-    background-color: #fff;
     padding: 7px 10px;
+    color: rgb(0, 0, 0);
     border-radius: 12px;
+    background-color: #fff;
 }
 
 /* Footer */
 
 footer {
-    display: flex;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
     position: absolute;
     bottom: 0;
     left: 0;
+    display: flex;
     align-items: center;
-    background-color: rgb(41, 40, 40);
-    color: #fff;
-    font-family: "Inter", sans-serif;
-    font-size: 15px;
     justify-content: center;
-    font-weight: 300;
-    padding: 30px 10%;
     width: 100%;
+    padding: 30px 10%;
+    color: #fff;
+    background-color: rgb(41, 40, 40);
 }
 
 .footer a {
-    color: dodgerblue;
-    text-decoration: none;
     transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: dodgerblue;
 }
 
 body,
 input,
 button {
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     outline: none;
 }
 
 .login-form-body {
     position: relative;
-    background-color: rgba(41, 40, 40, 0.74);
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
-    color: #ffffff;
-    height: 480px;
-    margin: 80px;
     overflow: hidden;
-    padding: 50px;
     width: 400px;
     min-width: 400px;
+    height: 480px;
+    margin: 80px;
+    padding: 50px;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgba(41, 40, 40, 0.74);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
 }
 
 .register-form-body {
     position: relative;
-    background-color: rgba(41, 40, 40, 0.74);
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
-    color: #ffffff;
+    overflow: hidden;
+    width: 400px;
+    min-width: 400px;
     height: 750px;
     margin-top: 80px;
     margin-bottom: 130px;
-    overflow: hidden;
     padding: 50px;
-    width: 400px;
-    min-width: 400px;
-}
-
-.form-title {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 32px;
-    font-weight: 900;
-    margin: 0;
-    padding-bottom: 40px;
-    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgba(41, 40, 40, 0.74);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
 }
 
 form a {
-    color: dodgerblue;
     text-decoration: none;
+    color: dodgerblue;
 }
 
 .button {
-    background-color: white;
+    font-size: 15px;
+    margin: 10px;
+    padding: 10px 40px;
+    transition: all 0.5s ease;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     border: 0;
     border-radius: 10px;
-    font-size: 15px;
-    letter-spacing: 1.5px;
-    margin: 20px;
-    padding: 10px 40px;
-    text-transform: uppercase;
-    transition: all 0.5s ease;
+    background-color: white;
     box-shadow: rgba(68, 67, 67, 0.87) 0px 2px 8px 0px;
 
 }
 
 .button:hover {
+    letter-spacing: 3px;
+    color: hsl(0, 0%, 100%);
     background-color: rgb(0, 178, 104);
     box-shadow: rgba(0, 0, 0, 0.801) 0px 7px 29px 0px;
-    color: hsl(0, 0%, 100%);
-    letter-spacing: 3px;
 }
 
 .button:active {
+    transition: 100ms;
+    transform: translateY(10px);
+    letter-spacing: 3px;
+    color: hsl(0, 0%, 100%);
     background-color: rgb(0, 178, 104);
     box-shadow: black 0px 0px 0px 0px;
-    color: hsl(0, 0%, 100%);
-    letter-spacing: 3px;
-    transform: translateY(10px);
-    transition: 100ms;
 }
 
 .center {
     display: flex;
     justify-content: center;
-    margin: 0 auto;
     width: 50%;
-}
-
-.checkbox {
-    width: 100px;
-    height: 100%;
-    margin: 0px auto;
-    margin-top: 7px;
+    margin: 0 auto;
 }
 
 
 .form-textbox {
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 8px;
     border: none;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
-    height: 35px;
-    margin-bottom: 15px;
-    margin-top: 5px;
-    padding: 8px;
-    width: 100%;
 }
 
 .form-fields {
@@ -208,19 +192,19 @@ form a {
 }
 
 .form-user-profile {
-    position: relative;
-    text-align: center;
     font-size: 20px;
-    background-color: rgba(41, 40, 40, 0.74);
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
-    color: #ffffff;
-    height: 100%;
-    margin: 80px;
+    position: relative;
     overflow: hidden;
-    padding: 50px;
     width: 460px;
     min-width: 400px;
+    height: 100%;
+    margin: 80px;
+    padding: 50px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgba(41, 40, 40, 0.74);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
 }
 
 .form-user-profile h1 {
@@ -233,8 +217,8 @@ form a {
 }
 
 .form-user-profile td:nth-child(1) {
-    text-align: right;
     padding-right: 10px;
+    text-align: right;
 }
 
 .form-user-profile td:nth-child(2) {
@@ -242,13 +226,13 @@ form a {
 }
 
 .form-user-profile td input {
+    font-size: 15px;
+    width: 100%;
+    height: 25px;
+    padding: 2px;
     border: none;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
-    height: 25px;
-    padding: 2px;
-    width: 100%;
-    font-size: 15px
 }
 
 .form-user-profile td {
@@ -262,15 +246,15 @@ form a {
 .radio-button {
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 8px;
     border: none;
     border-radius: 5px;
     background-color: white;
     box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
-    height: 35px;
-    margin-bottom: 15px;
-    margin-top: 5px;
-    padding: 8px;
-    width: 100%;
 }
 
 .radio-button input {
@@ -282,12 +266,8 @@ form a {
 }
 
 .radio-label {
-    color: black;
     padding-right: 20px;
-}
-
-.error-message {
-    color: tomato;
+    color: black;
 }
 
 .success {
@@ -298,32 +278,19 @@ form a {
     color: rgb(5, 211, 5);
 }
 
-.center-text {
-    text-align: center;
-}
-
-.bottom {
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    width: 100%;
-    padding-bottom: 50px;
-    transform: translate(-50%, 0);
-}
-
 .food-container {
     position: relative;
-    background-color: rgba(41, 40, 40, 0.74);
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
-    color: #ffffff;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
     height: 100%;
     margin: 80px;
     margin-bottom: 140px;
-    overflow: hidden;
     padding: 50px;
-    width: 100%;
-    max-width: 1000px;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgba(41, 40, 40, 0.74);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
 }
 
 .food-container h1 {
@@ -333,19 +300,19 @@ form a {
 }
 
 .food-box {
+    width: 370px;
+    height: 100%;
+    padding: 35px;
+    border-radius: 10px;
     background-color: rgb(0, 0, 0);
     box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
-    border-radius: 10px;
-    height: 100%;
-    width: 370px;
-    padding: 35px;
 }
 
 .food-container .button {
     height: 30px;
-    padding-top: 5px;
     margin-top: 20px;
     margin-bottom: 0px;
+    padding-top: 5px;
 }
 
 .food-container h3,
@@ -359,17 +326,17 @@ p {
 
 .review-container {
     position: relative;
-    background-color: rgba(41, 40, 40, 0.74);
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
-    color: #ffffff;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
     height: 100%;
     margin: 80px;
     margin-bottom: 140px;
-    overflow: hidden;
     padding: 50px 100px;
-    width: 100%;
-    max-width: 1000px;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgba(41, 40, 40, 0.74);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
 }
 
 
@@ -380,91 +347,215 @@ p {
 }
 
 .review-box {
+    width: 100%;
+    height: 100%;
+    padding: 35px;
+    border-radius: 10px;
     background-color: rgb(0, 0, 0);
     box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
-    padding: 35px;
 }
 
 .review-input {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    width: 100%;
     margin-top: 10px;
     padding: 10px;
-    border-radius: 5px;
-    width: 100%;
-    font-family: "Inter", sans-serif;
-    font-size: 17px;
-    -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .reviews {
-    padding: 10px;
     margin: 20px;
-    background-color: rgb(0, 40, 80);
+    padding: 10px;
     border-radius: 5px;
+    background-color: rgb(0, 40, 80);
 
 }
 
-.review-box div,
+/*.review-box div,
 h3,
 p,
 tr {
     text-align: left;
 
-}
+}*/
 
 .food-container h2 {
     margin-top: 10px
 }
 
 .food-container a {
-    color: #fff;
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
-    text-decoration: none;
     padding: 10px;
+    text-decoration: none;
+    color: #fff;
     color: dodgerblue;
 }
 
 .about {
-    position: relative;
-    text-align: center;
     font-size: 20px;
-    background-color: rgba(41, 40, 40, 0.74);
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
-    color: #ffffff;
-    height: 100%;
-    margin: 80px;
+    position: relative;
     overflow: hidden;
-    padding: 50px;
     width: 600px;
     min-width: 400px;
+    height: 100%;
+    margin: 80px;
+    padding: 50px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgba(41, 40, 40, 0.74);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
 }
 
 .search-inputbox {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    width: 100%;
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
-    width: 100%;
-    font-family: "Inter", sans-serif;
-    font-size: 17px;
 }
 
 .white-back-text {
-    color: rgb(0, 0, 0);
     font-weight: 800;
-    background-color: #fff;
     padding: 2px 10px;
+    color: rgb(0, 0, 0);
     border-radius: 12px;
+    background-color: #fff;
 }
 
 .currency-text a {
     padding: 10px;
 }
 
-.category-title a { cursor: pointer; }
+.category-title a {
+    cursor: pointer;
+}
+
+
+/*.checkbox {*/
+/*    margin: auto 5px;*/
+/*}*/
+
+/* modified */
+
+fieldset {
+    border: 0;
+}
+
+.form-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.form-container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    width: 420px;
+    min-width: 420px;
+    min-height: 400px;
+    margin: 0 auto;
+    padding: 50px;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgba(41, 40, 40, 0.74);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+}
+
+.form-container #login-form {
+    min-height: 450px;
+}
+
+.bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10px 50px 50px 50px;
+}
+
+/*.center {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+}*/
+
+.show-password {
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    margin-top: 3px;
+    padding-right: 60px;
+    cursor: pointer;
+    color: #292828;
+}
+
+fieldset div {
+    padding-top: 10px;
+}
+
+fieldset label {
+    margin-left: 3px;
+}
+
+.form-input-box {
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+}
+
+.error-message {
+    color: tomato;
+}
+
+.warning-message {
+    font-size: 11px;
+    display: block;
+    color: tomato;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.remember-me {
+    margin: 5px;
+    text-align: center;
+}
+
+.remember-me input, label {
+    cursor: pointer;
+}
+
+.bottom-text {
+    margin-top: 20px;
+}
+
+/*.form-container > div {*/
+/*    vertical-align: bottom;*/
+/*}*/
+
+/* hide password show eye button
+   on IE, MS Edge etc browser */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}

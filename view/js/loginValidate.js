@@ -13,7 +13,9 @@ $('#login-form').validate({
 
                 if (jsonData['success'] === true)
                     $(location).prop('href', 'home.php');
-                $('#prompt-message').html(jsonData['promptMessage']);
+                $('#prompt-message')
+                    .html(jsonData['promptMessage'])
+                    .addClass('error-message');
             }
         })
     },
@@ -43,7 +45,18 @@ $('#login-form').validate({
             maxlength: "Your password must be no more than 15 characters long"
         }
     },
-    errorClass: 'form-input-error'
+    errorClass: 'warning-message',
+    errorElement: 'error'
+})
+
+$('#password-view').click(() => {
+    if ($('#password-view').text() === 'Show') {
+        $('#password').prop('type', 'text');
+        $('#password-view').html('Hide');
+    } else {
+        $('#password').prop('type', 'password');
+        $('#password-view').html('Show');
+    }
 })
 
 function removeWhitespaces(value, id) {
