@@ -45,8 +45,7 @@ $('#login-form').validate({
             maxlength: "Your password must be no more than 15 characters long"
         }
     },
-    errorClass: 'warning-message',
-    errorElement: 'error'
+    errorClass: "form-input-error warning-message"
 })
 
 $('#password-view').click(() => {

@@ -12,8 +12,6 @@ verifyLoggedIn();
                     <label for="usernameOrEmail">Username or Email</label>
                     <input autofocus class="form-input-box" id="usernameOrEmail" name="usernameOrEmail"
                            placeholder="Enter your username or email here" type="text">
-                    <p id="error"></p>
-                    <!--                    <p class="warning-message">Username must be at least 7 characters!</p>-->
                 </div>
                 <div>
                     <label for="password">Password</label>
@@ -22,8 +20,6 @@ verifyLoggedIn();
                     </div>
                     <input id="password" name="password" autocomplete="on" class="form-input-box"
                            placeholder="Enter your password here" type="password">
-                    <p id="error"></p>
-                    <!--                    <p class="warning-message">Your username must be no more than 15 characters long</p>-->
                 </div>
                 <div class="remember-me">
                     <input id="remember" name="remember" type="checkbox"/>

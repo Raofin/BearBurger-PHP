@@ -9,7 +9,8 @@ $('#register-form').validate({
             cache: false,
             processData: false,
             success: data => {
-                $('#prompt-message').text(data);
+                $('#prompt-message').text(data)
+                    .addClass('success-message');
                 $('#register-form').trigger('reset');
             }
         })
@@ -74,14 +75,26 @@ $('#register-form').validate({
         },
         gender: "Please select your gender",
     },
-    errorClass: 'form-input-error',
-    errorPlacement(error, element) {
-        // $(this.errorElement).addClass('form-input-error');
+    errorClass: "form-input-error warning-message",
+    errorPlacement: function (error, element) {
+        if (element.attr("type") === "radio") {
+            error.insertAfter('#radio-button-box');
+            $('#radio-button-box').addClass('form-input-error');
+        } else error.insertAfter(element);
     }
+})
 
-    // success: function (label, element) {
-    //     element.removeClass('form-input-error');
-    // }
+$('input[type=radio][name=gender]').change(() =>
+    $('#radio-button-box').removeClass('form-input-error'));
+
+$('#password-view').click(() => {
+    if ($('#password-view').text() === 'Show') {
+        $('#password, #cPassword').prop('type', 'text');
+        $('#password-view').html('Hide');
+    } else {
+        $('#password, #cPassword').prop('type', 'password');
+        $('#password-view').html('Show');
+    }
 })
 
 function removeWhitespaces(value, id) {
