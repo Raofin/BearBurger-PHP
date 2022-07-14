@@ -1,6 +1,6 @@
 <?php
-require 'header.php';
-verifyLoggedIn();
+    require 'header.php';
+    verifyLoggedIn();
 ?>
 
     <div class="form-container">
@@ -53,6 +53,8 @@ verifyLoggedIn();
                 <div class="center-text">
                     <p id="prompt-message"></p>
                 </div>
+                0
+
                 <div class="center">
                     <input id="form-submit" type="submit" class="button" value="Register">
                 </div>

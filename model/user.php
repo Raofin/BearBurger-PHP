@@ -6,27 +6,38 @@
     // user register
     function register()
     {
-        $isUsernameUnique = false;
-        $isEmailUnique = false;
-
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $phoneNumber = $_POST['phone'];
         $gender = $_POST['gender'];
 
-        $checkUsernameQuery = "SELECT * FROM Users WHERE Username = '$username'";
-        $checkEmailQuery = "SELECT * FROM Users WHERE Email = '$email'";
-        $registrationQuery = "INSERT INTO Users (Username, Email, Password, PhoneNumber, Gender, Spent) 
-                              VALUES ('$username', '$email', '$password', '$phoneNumber', '$gender', 0);";
+        $query = "INSERT INTO Users (Username, Email, Password, PhoneNumber, Gender, Spent) 
+                          VALUES ('$username', '$email', '$password', '$phoneNumber', '$gender', 0);";
 
-        if (executeQuery($checkUsernameQuery)->num_rows === 0)
-            $isUsernameUnique = true;
-        if (executeQuery($checkEmailQuery)->num_rows === 0)
-            $isEmailUnique = true;
+        if (isUsernameUnique($username) && isEmailUnique($email)) {
+            executeQuery($query);
+            return "Success";
+        } else
+            return "Your <b>username</b> or <b>email address</b> has already been used in an existing account.";
+    }
 
-        if ($isUsernameUnique && $isEmailUnique) {
-            executeQuery($registrationQuery);
+    // update user details
+    function update()
+    {
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $phoneNumber = $_POST['phone'];
+        $oldEmail = $_SESSION['email'];
+
+        $query = "UPDATE Users
+                  SET Username='$username', Email='$email', Password='$password', PhoneNumber='$phoneNumber'
+                  WHERE email='$oldEmail'";
+
+        if (isUsernameUnique($username) && isEmailUnique($email)) {
+            executeQuery($query);
+            login();
             return "Success";
         } else
             return "Your <b>username</b> or <b>email address</b> has already been used in an existing account.";
@@ -74,33 +85,15 @@
         return $mysqliResult->num_rows > 0;
     }
 
-    // update user details
-    function update()
+    function isUsernameUnique($username)
     {
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $phoneNumber = $_POST['phone'];
-        $oldEmail = $_SESSION['email'];
-
-        $query = "UPDATE Users
-                  SET Username='$username', Email='$email', Password='$password', PhoneNumber='$phoneNumber'
-                  WHERE email='$oldEmail'";
-
-        executeQuery($query);
-        login();
-
-        header("location: ../View/profile.php");
-        die();
+        $checkUsernameQuery = "SELECT * FROM Users WHERE Username = '$username'";
+        return executeQuery($checkUsernameQuery)->num_rows === 0;
     }
 
-    function pay()
+    function isEmailUnique($email)
     {
-        foreach ($_POST as $item) {
-            if ($item === '') {
-                echo '<p style="color:tomato; margin-botton: 10px">Please fill out all the fields properly.<br></p>';
-                return;
-            }
-        }
-        echo '<p style="margin-bottom: 10px; color: rgb(5, 211, 5);"> Payment Successful<br></p>';
+        $checkEmailQuery = "SELECT * FROM Users WHERE Email = '$email'";
+        return executeQuery($checkEmailQuery)->num_rows === 0;
+
     }
