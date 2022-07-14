@@ -13,6 +13,7 @@ $('#login-form').validate({
 
                 if (jsonData['success'] === true)
                     $(location).prop('href', 'home.php');
+
                 $('#prompt-message')
                     .html(jsonData['promptMessage'])
                     .addClass('error-message');

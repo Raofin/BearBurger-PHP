@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require '../controller/pageProtect.php';
     require '../model/foods.php';
     verifyCookie();
