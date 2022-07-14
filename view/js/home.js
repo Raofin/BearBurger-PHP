@@ -10,4 +10,7 @@ function fetch(category) {
         foodsTable.innerHTML = this.responseText;
     }
     xhr.send();
+
+    $('label').removeClass('white-back-text');
+    $('#' + category).addClass('white-back-text');
 }

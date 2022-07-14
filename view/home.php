@@ -4,24 +4,22 @@
     verifyNotLoggedIn();
 ?>
 
-    <center>
-        <div class="food-container">
-            <h1 style="text-align: center">Order Your Favourite Foods!</h1>
+    <div class="food-container">
+        <h1 style="text-align: center">Order Your Favourite Foods!</h1>
 
-            <form method="post">
-                <h2 class="category-title">
-                    Category:
-                    <a onclick="fetch('Burger')">Burger</a>
-                    <a onclick="fetch('Pizza')">Pizza</a>
-                    <a onclick="fetch('Drinks')">Drinks</a>
-                    <a onclick="fetch('Coffee')">Coffee</a>
-                    <a onclick="fetch('Desert')">Desert</a>
-                    <a onclick="fetch('Sides')">Sides</a>
-                </h2>
-            </form>
-            <table id="foods-table"></table>
-        </div>
-    </center>
+        <form method="post">
+            <h2 class="category-title">
+                Category:
+                <label onclick="fetch('Burger')" id="Burger">Burger</label>
+                <label onclick="fetch('Pizza')" id="Pizza">Pizza</label>
+                <label onclick="fetch('Drinks')" id="Drinks">Drinks</label>
+                <label onclick="fetch('Coffee')" id="Coffee">Coffee</label>
+                <label onclick="fetch('Desert')" id="Desert">Desert</label>
+                <label onclick="fetch('Sides')" id="Sides">Sides</label>
+            </h2>
+        </form>
+        <table id="foods-table"></table>
+    </div>
 
     <script src="js/home.js"></script>
 

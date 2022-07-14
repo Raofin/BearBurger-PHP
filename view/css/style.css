@@ -255,52 +255,6 @@ form a {
     color: rgb(5, 211, 5);
 }
 
-.food-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 1000px;
-    height: 100%;
-    margin: 80px;
-    margin-bottom: 140px;
-    padding: 50px;
-    color: #fff;
-    border-radius: 10px;
-    background-color: rgba(41, 40, 40, 0.74);
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
-}
-
-.food-container h1 {
-    padding-bottom: 5px;
-    filter: drop-shadow(5px 3px 5px black);
-    -webkit-filter: drop-shadow(5px 3px 5px black);
-}
-
-.food-box {
-    width: 370px;
-    height: 100%;
-    padding: 35px;
-    border-radius: 10px;
-    background-color: rgb(0, 0, 0);
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
-}
-
-.food-container .button {
-    height: 30px;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    padding-top: 5px;
-}
-
-.food-container h3,
-p {
-    padding-bottom: 5px
-}
-
-.food-container td {
-    padding: 20px;
-}
-
 .review-container {
     position: relative;
     overflow: hidden;
@@ -361,19 +315,6 @@ tr {
 
 }*/
 
-.food-container h2 {
-    margin-top: 10px
-}
-
-.food-container a {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    padding: 10px;
-    text-decoration: none;
-    color: #fff;
-    color: dodgerblue;
-}
-
 .about {
     font-size: 20px;
     position: relative;
@@ -407,13 +348,18 @@ tr {
     background-color: #fff;
 }
 
-.currency-text a {
-    padding: 10px;
+a.white-back-text {
+    cursor: pointer;
+    color: dodgerblue;
 }
 
-.category-title a {
-    cursor: pointer;
+.category-title {
+    padding: 15px 0;
 }
+
+/*.currency-text a {
+    padding: 10px;
+}*/
 
 
 /*.checkbox {*/
@@ -433,6 +379,136 @@ fieldset {
     padding-bottom: 40px;
     text-align: center;
 }
+
+.payment-form-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.payment-description {
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.payment-price {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.payment-title {
+    font-size: 30px;
+    padding: 40px 15px 15px 15px;
+    text-align: center;
+}
+
+.payment-table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.payment-table td {
+    font-size: 20px;
+    padding: 0 5px;
+}
+
+.payment-table input {
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+}
+
+.currency-text {
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.currency-text a {
+    cursor: pointer;
+}
+
+/* food container */
+
+.food-container h1 {
+    padding-bottom: 5px;
+    filter: drop-shadow(5px 3px 5px black);
+    -webkit-filter: drop-shadow(5px 3px 5px black);
+}
+
+.food-box {
+    width: 370px;
+    height: 100%;
+    margin: auto 10px;
+    padding: 35px;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+}
+
+.food-container .button {
+    /*height: 30px;*/
+    /*margin-top: 20px;*/
+    /*margin-bottom: 0px;*/
+    display: inline-block;
+    padding: 8px 25px;
+}
+
+/*.food-container h2 {*/
+/*    margin-top: 10px*/
+/*}*/
+
+.food-container label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    padding: 4px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: dodgerblue;
+
+}
+
+.food-box h2, p {
+    padding-bottom: 10px;
+}
+
+.food-price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.food-container td {
+    display: inline-block;
+    padding: 20px;
+}
+
+.food-container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    width: 100%;
+    min-width: 420px;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto 140px auto;
+    padding: 50px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgba(41, 40, 40, 0.74);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+}
+
+/* food container */
 
 .form-container {
     position: relative;

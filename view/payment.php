@@ -4,52 +4,69 @@
     fetchFoodDetails($_REQUEST['id']);
 ?>
 
-    <div class="center">
-        <form class="form-user-profile payment" method="post">
-            <h1>Food Details</h1>
-            <h3 style="padding-bottom: 10px;"> <?php echo isset($_SESSION['foodTitle']) ? $_SESSION['foodTitle'] : 'Food Title (No food selected)'; ?> </h3>
-            <p style="padding-bottom: 10px;"><?php echo isset($_SESSION['foodDescription']) ? $_SESSION['foodDescription'] : 'Food Description (No food selected)'; ?></p>
-            <h3>Price: <span id="price"
-                             class="white-back-text"><?php echo isset($_SESSION['foodDescription']) ? $_SESSION['foodPrice'] : '00'; ?>tk</span>
-            </h3>
-            <br>
+    <div class="form-container" id="payment-form">
+        <form class="" method="POST">
+            <div>
+                <h1 class="payment-form-title">
+                    <?php echo isset($_SESSION['foodTitle']) ? $_SESSION['foodTitle'] : 'Food Title (No food selected)'; ?>
+                </h1>
+                <p class="payment-description">
+                    <?php echo isset($_SESSION['foodDescription']) ? $_SESSION['foodDescription'] : 'Food Description (No food selected)'; ?>
+                </p>
+                <p class="payment-price">
+                    Price: <span id="price" class="white-back-text">
+                        <?php echo isset($_SESSION['foodDescription']) ? $_SESSION['foodPrice'] : '00'; ?>tk
+                    </span>
+                </p>
+            </div>
+
             <div class="currency-text">
-                <h3 class="">Pay using
-                    <a href="" id="taka">Taka</a>
-                    <a href="" id="dollar">Dollar</a>
-                    <a href="" id="pound">Pound</a>
+                <h3 class="">Pay with:
+                    <a id="taka" class="white-back-text">Taka</a>
+                    <a id="dollar">Dollar</a>
+                    <a id="pound">Pound</a>
                 </h3>
             </div>
-            <br>
-            <h1>Payment</h1>
-            <center>
-                <table>
+
+            <div>
+                <h2 class="payment-title">Payment</h2>
+                <table class="payment-table">
                     <tr>
                         <td>Name</td>
-                        <td><input type="text" id="name" name="name" value="" placeholder="Enter your name" autofocus>
+                        <td>
+                            <input autofocus id="name" name="name" placeholder="Enter your name" type="text">
                         </td>
                     </tr>
                     <tr>
                         <td>Card Number</td>
-                        <td><input type="text" id="cardNumber" name="cardNumber" value=""
-                                   placeholder="Credit card number"></td>
+                        <td>
+                            <input id="cardNumber" name="cardNumber" placeholder="Credit card number" type="text">
+                        </td>
                     </tr>
                     <tr>
                         <td>Exp Date</td>
-                        <td><input type="text" id="expDate" name="expDate" value="" placeholder="Enter expiration date">
+                        <td>
+                            <input id="expDate" name="expDate" placeholder="Enter expiration date" type="text">
                         </td>
                     </tr>
                     <tr>
                         <td>Code CVV</td>
-                        <td><input type="password" id="cvv" name="cvv" value="" placeholder="Enter your code cvv"
-                                   autocomplete="on"></td>
+                        <td>
+                            <input autocomplete="off" id="cvv" name="cvv" placeholder="Enter your code cvv"
+                                   type="password">
+                        </td>
                     </tr>
                 </table>
-            </center>
-            <div id="message" class="center-text"></div>
-            <br>
-            <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') pay() ?>
-            <input type="submit" value="Pay" class="button" style="margin: 0;">
+            </div>
+
+            <div>
+                <div class="center-text">
+                    <p id="message"></p>
+                </div>
+                <div class="center">
+                    <input type="submit" value="Pay" class="button">
+                </div>
+            </div>
         </form>
     </div>
 
