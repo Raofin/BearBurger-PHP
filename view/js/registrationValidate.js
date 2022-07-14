@@ -9,9 +9,18 @@ $('#register-form').validate({
             cache: false,
             processData: false,
             success: data => {
-                $('#prompt-message').text(data)
-                    .addClass('success-message');
-                $('#register-form').trigger('reset');
+                if (data === 'Success') {
+                    $('#prompt-message')
+                        .text('Registration Successful')
+                        .addClass('success-message');
+                    $('#register-form').trigger('reset');
+                } else {
+                    $('#prompt-message')
+                        .html(data)
+                        .addClass('error-message');
+                    $('#username, #email')
+                        .addClass('form-input-error');
+                }
             }
         })
     },

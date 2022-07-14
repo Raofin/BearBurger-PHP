@@ -555,9 +555,10 @@ label.warning-message {
 
 #prompt-message {
     position: absolute;
-    left: 0;
     right: 0;
     bottom: 160px;
+    left: 0;
+    padding: 0 50px;
 }
 
 /*.form-container > div {*/

@@ -17,7 +17,5 @@
         $password === $cPassword &&
         checkLength($phone, 10) && is_numeric($phone) &&
         !empty($gender)
-    ) {
-        register();
-        echo 'Registration Successful';
-    } else echo 'Please fill out all the fields properly';
+    ) echo register();
+    else echo 'Please fill out all the fields properly';

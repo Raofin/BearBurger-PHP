@@ -5,16 +5,30 @@
     // user register
     function register()
     {
+        $isUsernameUnique = false;
+        $isEmailUnique = false;
+
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $phoneNumber = $_POST['phone'];
-        $gender = isset($_POST['gender']) ? $_POST['gender'] : "";
+        $gender = $_POST['gender'];
 
-        $query = "INSERT INTO Users (Username, Email, Password, PhoneNumber, Gender, Spent) 
-                  VALUES ('$username', '$email', '$password', '$phoneNumber', '$gender', 0);";
+        $checkUsernameQuery = "SELECT * FROM Users WHERE Username = '$username'";
+        $checkEmailQuery = "SELECT * FROM Users WHERE Email = '$email'";
+        $registrationQuery = "INSERT INTO Users (Username, Email, Password, PhoneNumber, Gender, Spent) 
+                              VALUES ('$username', '$email', '$password', '$phoneNumber', '$gender', 0);";
 
-        executeQuery($query);
+        if (executeQuery($checkUsernameQuery)->num_rows === 0)
+            $isUsernameUnique = true;
+        if (executeQuery($checkEmailQuery)->num_rows === 0)
+            $isEmailUnique = true;
+
+        if ($isUsernameUnique && $isEmailUnique) {
+            executeQuery($registrationQuery);
+            return "Success";
+        } else
+            return "Your <b>username</b> or <b>email address</b> has already been used in an existing account.";
     }
 
     // login using username or email, and password
