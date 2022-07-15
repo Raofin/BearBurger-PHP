@@ -8,68 +8,59 @@
 
     function postComment()
     {
+        $foodId = $_REQUEST['foodId'];
         $username = $_SESSION['username'];
-        $promptMessage = '';
+        $comment = $_POST['comment'];
 
-        if (empty($_POST['comment']))
-            $promptMessage .= '<p class="error-message">Please fill out the comment field.</p>';
-        else {
-            $comment = $_POST['comment'];
-            $commentId = $_POST['comment-id'];
+        $query = "INSERT INTO Comments
+                  (ParentId, FoodId, PostedBy, Comment) 
+                  VALUES (0, '$foodId', '$username', '$comment')";
 
-            $mysqli = connect();
-            $query = "INSERT INTO bearburger.tbl_comment
-                      (parent_comment_id, comment, comment_sender_name) 
-                      VALUES ('$commentId', '$comment', '$username')";
-            $mysqli->query($query);
-            $mysqli->close();
-
-            $promptMessage = '<p class="success-message">Comment posted.</p>';
-        }
-
-        $data = array('promptMessage' => $promptMessage);
-        echo json_encode($data);
+        executeQuery($query);
+        echo "Comment posted";
     }
 
     function loadComments()
     {
-        $comments = '';
-        $mysqli = connect();
-        $query = "SELECT * FROM bearburger.tbl_comment 
-                  WHERE parent_comment_id = '0' 
-                  ORDER BY comment_id DESC";
-        $data = $mysqli->query($query);
+        $foodId = $_REQUEST['foodId'];
+        $comments = "";
+        $query = "SELECT * FROM Comments 
+                  WHERE FoodID = '$foodId' AND ParentID = 0
+                  ORDER BY FoodID DESC";
 
-        while ($row = $data->fetch_assoc()) {
-            $comments .= '
-                <div class="reviews">
-                    <h3>comment' . $row["comment_sender_name"] . '</b> on <i>' . $row["date"] . '</i></h3>
-                    <p>' . $row["comment"] . '</p>
-                </div>';
-            $comments .= loadReplies($mysqli, $row["comment_id"]);
+        $mysqliResult = executeQuery($query);
+        while ($row = $mysqliResult->fetch_assoc()) {
+            $comments .= commentHtml($row, 0);
+            $comments .= loadReplies($foodId, $row["CommentID"]);
         }
 
-        $mysqli->close();
         echo $comments;
     }
 
-    function loadReplies($mysqli, $commentId, $marginLeft = 0)
+    function loadReplies($foodId, $ParentId, $marginLeft = 0)
     {
         $replies = "";
-        $query = "SELECT * FROM bearburger.tbl_comment 
-                  WHERE parent_comment_id = '$commentId'";
-        $data = $mysqli->query($query);
+        $query = "SELECT * FROM Comments 
+                  WHERE FoodID = '$foodId' AND ParentID = '$ParentId'";
+        $mysqliResult = executeQuery($query);
 
-        $marginLeft = $commentId == 0 ? 0 : $marginLeft + 48;
-
-        while ($row = $data->fetch_assoc()) {
-            $replies .= '
-                    <div class="reviews" style="margin-left: $marginleft px">
-                        <h3>reply' . $row["comment_sender_name"] . '</b> on <i>' . $row["date"] . '</i></h3>
-                        <p>' . $row["comment"] . '</p>
-                    </div>';
-            $replies .= loadReplies($mysqli, $row['comment_id'], $marginLeft);
+        while ($row = $mysqliResult->fetch_assoc()) {
+            $replies .= commentHtml($row, $ParentId);
+            $replies .= loadReplies($foodId, $row['CommentID'], $marginLeft);
         }
 
         return $replies;
+    }
+
+    function commentHtml($row, $ParentId)
+    {
+        $date = date('F j, Y', strtotime($row["PostDate"]));
+        $style = $ParentId !== 0 ? "style=\"margin-left: " . $ParentId * 50 . "px\"" : "";
+
+        return '
+            <div class="reviews" id="comments" ' . $style . '">
+                <a class="reply">Reply</a>
+                <p><span class="reviewer-name">' . $row["PostedBy"] . '</span> <i>on ' . $date . '</i></p>
+                <p id="posted-comment">' . $row["Comment"] . '</p>
+            </div>';
     }

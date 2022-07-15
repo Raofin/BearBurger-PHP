@@ -55,7 +55,7 @@
         return sessionLogin($query);
     }
 
-    // login using remembered user
+    // login using cookie
     function cookieLogin()
     {
         $rememberedUser = $_COOKIE["RememberedUser"];
