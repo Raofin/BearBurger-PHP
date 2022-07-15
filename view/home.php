@@ -8,7 +8,7 @@
         <h1 style="text-align: center">Order Your Favourite Foods!</h1>
 
         <form method="post">
-            <h2 class="category-title">
+            <h2 class="category-title" id="category-title">
                 Category:
                 <label onclick="fetch('Burger')" id="Burger">Burger</label>
                 <label onclick="fetch('Pizza')" id="Pizza">Pizza</label>

@@ -413,7 +413,7 @@ fieldset {
 /*    margin-top: 10px*/
 /*}*/
 
-.food-container label {
+#category-title label {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     padding: 4px 10px;
@@ -622,10 +622,18 @@ input::-ms-clear {
 #comment {
     font-family: 'Inter', sans-serif;
     font-size: 17px;
-    width: 90%;
-    margin: 20px;
+    width: 95%;
+    margin: 20px 0;
     padding: 10px;
     border-radius: 5px;
+}
+
+#comment.form-input-error {
+    box-shadow: tomato 0px 0px 5px 2px;
+}
+
+#comment-error {
+    display: block;
 }
 
 .reviews {
@@ -640,6 +648,10 @@ input::-ms-clear {
 
 #posted-comment {
     padding: 3px 0 0 5px;
+}
+
+.comment-container #description {
+    margin: 15px 0;
 }
 
 .review-box {

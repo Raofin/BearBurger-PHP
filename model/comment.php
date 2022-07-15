@@ -1,9 +1,11 @@
 <?php
     session_start();
     require_once 'dbConnection.php';
+    $GLOBALS['marginLeft'] = 0;
 
     if (isset($_REQUEST['type']))
         if ($_REQUEST['type'] === 'post') postComment();
+        else if ($_REQUEST['type'] === 'reply') postReply();
         else if ($_REQUEST['type'] === 'load') loadComments();
 
     function postComment()
@@ -17,7 +19,23 @@
                   VALUES (0, '$foodId', '$username', '$comment')";
 
         executeQuery($query);
-        echo "Comment posted";
+        echo "Success";
+    }
+
+
+    function postReply()
+    {
+        $username = $_SESSION['username'];
+        $comment = $_POST['comment'];
+        $commentId = $_REQUEST['commentId'];
+        $foodId = $_REQUEST['foodId'];
+
+        $query = "INSERT INTO Comments
+                  (ParentId, FoodId, PostedBy, Comment) 
+                  VALUES ('$commentId', '$foodId', '$username', '$comment')";
+
+        executeQuery($query);
+        echo "Success";
     }
 
     function loadComments()
@@ -26,18 +44,18 @@
         $comments = "";
         $query = "SELECT * FROM Comments 
                   WHERE FoodID = '$foodId' AND ParentID = 0
-                  ORDER BY FoodID DESC";
+                  ";
 
         $mysqliResult = executeQuery($query);
         while ($row = $mysqliResult->fetch_assoc()) {
-            $comments .= commentHtml($row, 0);
+            $comments .= commentHtml($row);
             $comments .= loadReplies($foodId, $row["CommentID"]);
         }
 
         echo $comments;
     }
 
-    function loadReplies($foodId, $ParentId, $marginLeft = 0)
+    function loadReplies($foodId, $ParentId)
     {
         $replies = "";
         $query = "SELECT * FROM Comments 
@@ -46,21 +64,27 @@
 
         while ($row = $mysqliResult->fetch_assoc()) {
             $replies .= commentHtml($row, $ParentId);
-            $replies .= loadReplies($foodId, $row['CommentID'], $marginLeft);
+            $replies .= loadReplies($foodId, $row['CommentID']);
         }
+        $GLOBALS['marginLeft'] = 0;
 
         return $replies;
     }
 
-    function commentHtml($row, $ParentId)
+    function commentHtml($row, $ParentId = 0)
     {
         $date = date('F j, Y', strtotime($row["PostDate"]));
-        $style = $ParentId !== 0 ? "style=\"margin-left: " . $ParentId * 50 . "px\"" : "";
+        if ($ParentId !== 0) {
+            $GLOBALS['marginLeft'] += 50;
+            $style = "style=\"margin-left: " . ($GLOBALS['marginLeft']) . "px\"";
+        } else $style = "";
 
         return '
             <div class="reviews" id="comments" ' . $style . '">
-                <a class="reply">Reply</a>
-                <p><span class="reviewer-name">' . $row["PostedBy"] . '</span> <i>on ' . $date . '</i></p>
-                <p id="posted-comment">' . $row["Comment"] . '</p>
+                <div id="comment-id-' . $row["CommentID"] . '">
+                    <a class="reply" onclick="return reply(' . $row["CommentID"] . ')">Reply</a>
+                    <p><span class="reviewer-name" id="reviewer-name">' . $row["PostedBy"] . '</span> <i>on ' . $date . '</i></p>
+                    <p id="posted-comment">' . $row["Comment"] . '</p>
+                </div>    
             </div>';
     }

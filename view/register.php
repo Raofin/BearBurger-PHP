@@ -53,8 +53,6 @@
                 <div class="center-text">
                     <p id="prompt-message"></p>
                 </div>
-                0
-
                 <div class="center">
                     <input id="form-submit" type="submit" class="button" value="Register">
                 </div>
