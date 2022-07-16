@@ -1,6 +1,6 @@
 <?php
-require 'header.php';
-verifyLoggedIn();
+    require 'header.php';
+    verifyLoggedIn();
 ?>
 
     <div class="form-container">
@@ -43,4 +43,4 @@ verifyLoggedIn();
 
     <script src="js/loginValidate.js"></script>
 
-<?php require 'footer.php' ?>
+<?php include 'footer.php' ?>

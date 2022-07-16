@@ -46,9 +46,10 @@
         </form>
     </div>
 
-<?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    header("location: profileModify.php");
-    die();
-} ?>
+<?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        header("location: profileModify.php");
+        die();
+    } ?>
 
-<?php require 'footer.php' ?>
+<?php include 'footer.php' ?>

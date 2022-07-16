@@ -54,5 +54,4 @@
 
     <script src="js/updateValidate.js"></script>
 
-
-<?php require 'footer.php' ?>
+<?php include 'footer.php' ?>

@@ -1,6 +1,5 @@
 <?php
     require 'header.php';
-    require '../controller/loadFoods.php';
     verifyNotLoggedIn();
 ?>
 
@@ -23,4 +22,4 @@
 
     <script src="js/home.js"></script>
 
-<?php require 'footer.php' ?>
+<?php include 'footer.php' ?>
