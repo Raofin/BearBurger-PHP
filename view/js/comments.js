@@ -59,13 +59,13 @@ $('#comment-form').validate({
     rules: {
         comment: {
             required: true,
-            minlength: 4
+            minlength: 1
         }
     },
     messages: {
         comment: {
             required: "Please enter a comment",
-            minlength: "Your comment must consist of at least 4 characters",
+            minlength: "Your comment must consist of at least 1 characters",
         }
     },
     errorClass: "form-input-error error-message"
