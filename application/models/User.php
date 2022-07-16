@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'dbConnection.php';
+    require_once 'DBConnection.php';
     session_start();
 
     // user register

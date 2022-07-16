@@ -1,7 +1,7 @@
 <?php
 
-    require '../model/user.php';
-    require_once 'stringValidate.php';
+    require '../models/User.php';
+    require_once 'StringValidate.php';
 
     $username = removeWhitespaces($_POST['username']);
     $email = removeWhitespaces($_POST['email']);

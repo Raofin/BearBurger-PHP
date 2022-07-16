@@ -1,18 +1,16 @@
 $('#login-form').validate({
     submitHandler: form => {
-        let formData = $('#login-form').serialize();
-
         $.ajax({
-            url: '/controller/loginValidate.php',
+            url: '../controllers/loginValidate.php',
             method: "POST",
-            data: formData,
+            data: $('#login-form').serialize(),
             cache: false,
             processData: false,
             success: data => {
                 let jsonData = JSON.parse(data);
 
                 if (jsonData['success'] === true)
-                    $(location).prop('href', 'home.php');
+                    $(location).prop('href', 'Home.php');
                 $('#prompt-message')
                     .html(jsonData['promptMessage'])
                     .addClass('error-message');

@@ -1,6 +1,6 @@
-<?php require 'header.php' ?>
+<?php require 'Header.php' ?>
 
-    <div class="center ">
+    <div class="center">
         <div class="about">
             <h1>Project Details</h1><br>
 
@@ -28,8 +28,8 @@
     </div>
 
 <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    header("location: profileModify.php");
+    header("location: ProfileModify.php");
     die();
 } ?>
 
-<?php include 'footer.php' ?>
+<?php include 'Footer.php' ?>

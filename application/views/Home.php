@@ -1,5 +1,5 @@
 <?php
-    require 'header.php';
+    require 'Header.php';
     verifyNotLoggedIn();
 ?>
 
@@ -20,6 +20,6 @@
         <table id="foods-table"></table>
     </div>
 
-    <script src="js/home.js"></script>
+    <script src="../../public/js/Home.js"></script>
 
-<?php include 'footer.php' ?>
+<?php include 'Footer.php' ?>

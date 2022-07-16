@@ -1,5 +1,5 @@
 <?php
-    require 'header.php';
+    require 'Header.php';
     verifyLoggedIn();
 ?>
 
@@ -35,12 +35,12 @@
                     <input id="form-submit" type="submit" class="button" value="Login">
                 </div>
                 <div class="center-text bottom-text">
-                    New here? <a href="register.php">Create an Account</a>
+                    New here? <a href="Register.php">Create an Account</a>
                 </div>
             </div>
         </form>
     </div>
 
-    <script src="js/loginValidate.js"></script>
+    <script src="../../public/js/LoginValidate.js"></script>
 
-<?php include 'footer.php' ?>
+<?php include 'Footer.php' ?>

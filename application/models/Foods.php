@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'dbConnection.php';
+    require_once 'DBConnection.php';
 
     // response to GET requests
     if (isset($_REQUEST['cat'])) fetchFoods($_REQUEST['cat']);
@@ -45,8 +45,8 @@
                 <p>' . $row['Description'] . '</p>
                 <p class="food-price">Price: ' . $row['Price'] . 'tk</p>
                 <div>
-                    <a href="payment.php?id=' . $row['FoodID'] . '"><button type="button" class="button">Buy</button></a>
-                    <a href="foodReview.php?id=' . $row['FoodID'] . '"><button type="button" class="button">Review</button></a>
+                    <a href="Payment.php?id=' . $row['FoodID'] . '"><button type="button" class="button">Buy</button></a>
+                    <a href="FoodReview.php?id=' . $row['FoodID'] . '"><button type="button" class="button">Review</button></a>
                 </div>
             </div>
         </td>';

@@ -1,7 +1,7 @@
 <?php
 
-    require_once '../model/user.php';
-    require_once 'stringValidate.php';
+    require_once '../models/User.php';
+    require_once 'StringValidate.php';
 
     $promptMessage = '';
     $data = array('success' => false);

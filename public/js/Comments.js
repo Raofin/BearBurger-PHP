@@ -1,7 +1,7 @@
 $(document).ready(() => loadComments());
 
 let foodId = $('#food-id').text();
-let ajaxUrl = '/model/comment.php?type=post&foodId=' + foodId;
+let ajaxUrl = '../models/Comment.php?type=post&foodId=' + foodId;
 let isReply = false;
 
 function reply(commentId) {
@@ -21,11 +21,11 @@ function reply(commentId) {
 
 function changeAjaxUrl(commentId = 0) {
     if (isReply) {
-        ajaxUrl = '/model/comment.php?type=post&foodId=' + foodId;
+        ajaxUrl = '../models/Comment.php?type=post&foodId=' + foodId;
         $('#submit').prop('value', 'Post');
         isReply = false;
     } else {
-        ajaxUrl = '/model/comment.php?type=reply&commentId=' + commentId + '&foodId=' + foodId;
+        ajaxUrl = '../models/Comment.php?type=reply&commentId=' + commentId + '&foodId=' + foodId;
         $('#submit').prop('value', 'Reply');
         isReply = true;
     }
@@ -73,7 +73,7 @@ $('#comment-form').validate({
 
 function loadComments() {
     $.ajax({
-        url: '/model/comment.php?type=load&foodId=' + foodId,
+        url: '../models/Comment.php?type=load&foodId=' + foodId,
         method: "GET",
         success: data => {
             if (data !== '')

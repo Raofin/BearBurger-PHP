@@ -1,5 +1,5 @@
 <?php
-    require 'header.php';
+    require 'Header.php';
     verifyNotLoggedIn();
 ?>
 
@@ -16,6 +16,6 @@
         </div>
     </center>
 
-    <script src="js/search.js"></script>
+    <script src="../../public/js/Search.js"></script>
 
-<?php include 'footer.php'; ?>
+<?php include 'Footer.php'; ?>

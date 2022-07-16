@@ -2,16 +2,15 @@
 
     function verifyCookie()
     {
-        require_once '../model/user.php';
-        if (isset($_COOKIE["RememberedUser"]) && !isset($_SESSION['loggedIn'])) {
+        require_once '../models/User.php';
+        if (isset($_COOKIE["RememberedUser"]) && !isset($_SESSION['loggedIn']))
             cookieLogin();
-        }
     }
 
     function verifyLoggedIn()
     {
         if (isset($_SESSION['loggedIn'])) {
-            header("location: home.php");
+            header("location: Home.php");
             die();
         }
     }
@@ -19,7 +18,7 @@
     function verifyNotLoggedIn()
     {
         if (!isset($_SESSION['loggedIn'])) {
-            header("location: login.php");
+            header("location: Login.php");
             die();
         }
     }

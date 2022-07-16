@@ -1,16 +1,14 @@
 $('#update-form').validate({
     submitHandler: form => {
-        let formData = $('#update-form').serialize();
-
         $.ajax({
-            url: '/controller/updateValidate.php',
+            url: '../controllers/updateValidate.php',
             method: "POST",
-            data: formData,
+            data: $('#update-form').serialize(),
             cache: false,
             processData: false,
             success: data => {
                 if (data === 'Success')
-                    $(location).prop('href', 'profile.php');
+                    $(location).prop('href', 'Profile.php');
                 else {
                     $('#message')
                         .html(data)

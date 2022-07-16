@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once 'dbConnection.php';
+    require_once 'DBConnection.php';
 
     if (isset($_REQUEST['type']))
         if ($_REQUEST['type'] === 'post') postComment();

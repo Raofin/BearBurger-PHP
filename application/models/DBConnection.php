@@ -1,5 +1,5 @@
 <?php
-    require_once 'config.php';
+    require_once '../../config/Config.php';
 
     function connect()
     {
@@ -19,7 +19,7 @@
         try {
             connect()->close(); // open the connection to test and then close
         } catch (Exception $ex) {
-            echo "<script>location.href = '../view/dbError.php';</script>";
+            echo "<script>location.href = '../views/DatabaseError.php';</script>";
         }
     }
 

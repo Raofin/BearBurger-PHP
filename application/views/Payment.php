@@ -1,5 +1,5 @@
 <?php
-    require 'header.php';
+    require 'Header.php';
     verifyNotLoggedIn();
     fetchFoodDetails($_REQUEST['id']);
 ?>
@@ -70,6 +70,6 @@
         </form>
     </div>
 
-    <script src="js/payment.js"></script>
+    <script src="../../public/js/Payment.js"></script>
 
-<?php include 'footer.php' ?>
+<?php include 'Footer.php' ?>

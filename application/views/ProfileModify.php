@@ -1,10 +1,10 @@
 <?php
-    require 'header.php';
+    require 'Header.php';
     verifyNotLoggedIn();
 ?>
 
     <div class="center">
-        <form class="form-user-profile" method="post">
+        <form class="form-user-profile" id="update-form" method="post">
             <h1>User Profile</h1>
             <center>
                 <table>
@@ -14,19 +14,21 @@
                     </tr>
                     <tr>
                         <td>Username:</td>
-                        <td><?php echo $_SESSION['username'] ?></td>
+                        <td><input type="text" id="username" name="username"
+                                   value="<?php echo $_SESSION['username'] ?>"></td>
                     </tr>
                     <tr>
                         <td>Email:</td>
-                        <td><?php echo $_SESSION['email'] ?></td>
+                        <td><input type="text" id="email" name="email" value="<?php echo $_SESSION['email'] ?>"></td>
                     </tr>
                     <tr>
                         <td>Password:</td>
-                        <td><?php echo $_SESSION['password'] ?></td>
+                        <td><input type="password" id="password" name="password"
+                                   value="<?php echo $_SESSION['password'] ?>"></td>
                     </tr>
                     <tr>
                         <td>Phone:</td>
-                        <td><?php echo $_SESSION['phone'] ?></td>
+                        <td><input type="text" id="phone" name="phone" value="<?php echo $_SESSION['phone'] ?>"></td>
                     </tr>
                     <tr>
                         <td>Gender:</td>
@@ -39,17 +41,17 @@
                 </table>
             </center>
             <br>
-            <div class="center-text">
-                <p id="message"></p>
+            <div>
+                <div class="center-text">
+                    <p id="message"></p>
+                </div>
+                <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') update() ?>
+                <input type="submit" value="Update" class="button" style="margin: 0;">
             </div>
-            <input type="submit" value="Modify Details" class="button" style="margin: 0;">
+
         </form>
     </div>
 
-<?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        header("location: profileModify.php");
-        die();
-    } ?>
+    <script src="../../public/js/UpdateValidate.js"></script>
 
-<?php include 'footer.php' ?>
+<?php include 'Footer.php' ?>
