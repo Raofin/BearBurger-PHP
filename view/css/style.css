@@ -730,3 +730,16 @@ input::-ms-clear {
 }
 
 */
+
+#database-error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+#database-error h1 {
+    padding: 15px;
+}

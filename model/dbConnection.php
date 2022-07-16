@@ -1,24 +1,25 @@
 <?php
+    require_once 'config.php';
 
     function connect()
     {
-        $hostname = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "BearBurger";
-
-        $mysqli = new mysqli($hostname, $username, $password, $database);
-
-        if ($mysqli->connect_error)
-            die("Connection Error: $mysqli->connect_error");
-
-        return $mysqli;
+        return new mysqli(HOSTNAME, USERNAME, PASSWORD, DATABASE);
     }
 
     function executeQuery($query)
     {
-        $connection = connect();
-        $mysqliResult = $connection->query($query);
-        $connection->close();
+        $mysqli = connect();
+        $mysqliResult = $mysqli->query($query);
+        $mysqli->close();
         return $mysqliResult;
     }
+
+    function connectionTest()
+    {
+        try {
+            connect()->close(); // open the connection to test and then close
+        } catch (Exception $ex) {
+            echo "<script>location.href = '../view/dbError.php';</script>";
+        }
+    }
+
