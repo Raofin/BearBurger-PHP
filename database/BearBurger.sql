@@ -1,13 +1,11 @@
 # create database
-DROP DATABASE IF EXISTS BearBurger;
-CREATE DATABASE BearBurger;
+CREATE DATABASE IF NOT EXISTS BearBurger;
 
 # select the database
 USE BearBurger;
 
 # create users table
-DROP TABLE IF EXISTS Users;
-CREATE TABLE Users
+CREATE TABLE IF NOT EXISTS Users
 (
     UserID      INT AUTO_INCREMENT PRIMARY KEY,
     Username    VARCHAR(30) NOT NULL UNIQUE,
@@ -20,8 +18,8 @@ CREATE TABLE Users
 );
 
 # insert user data
-INSERT INTO Users (Username, Email, Password, PhoneNumber, Gender, Spent)
-VALUES ('Raofin', 'hello@raofin.net', 'asdF', '+8801234567890', 'male', 6801),
+INSERT IGNORE INTO Users (Username, Email, Password, PhoneNumber, Gender, Spent)
+VALUES ('Raofin', 'hello@raofin.net', 'Asdfgh', '+8801234567890', 'male', 6801),
        ('Bill Gates', 'billgates@outlook.com', 'billgates68457', '+6963343233', 'male', 9960),
        ('Elon Musk', 'elonmusk@yahoo.com', 'elon123', '+9668508170248', 'male', 7856),
        ('Jack Ma', 'jackma@gmail.com', 'jackma144', '+1667698473784', 'male', 4567),
@@ -31,19 +29,17 @@ VALUES ('Raofin', 'hello@raofin.net', 'asdF', '+8801234567890', 'male', 6801),
        ('Sundar Pichai', 'sundarpichai@gmail.com', 'sundarp296', '+9815680737969', 'male', 1546);
 
 # create foods table
-DROP TABLE IF EXISTS Foods;
-CREATE TABLE Foods
+CREATE TABLE IF NOT EXISTS Foods
 (
     FoodID      INT AUTO_INCREMENT PRIMARY KEY,
     Category    VARCHAR(30) NOT NULL,
-    Title       VARCHAR(30) NOT NULL,
+    Title       VARCHAR(30) NOT NULL UNIQUE,
     Description TEXT        NOT NULL,
     Price       INT         NOT NULL
 );
 
 # create users table
-DROP TABLE IF EXISTS Comments;
-CREATE TABLE Comments
+CREATE TABLE IF NOT EXISTS Comments
 (
     CommentID INT AUTO_INCREMENT PRIMARY KEY,
     ParentID  INT         NOT NULL,
@@ -55,7 +51,7 @@ CREATE TABLE Comments
 );
 
 # insert food data
-INSERT INTO Foods (Category, Title, Description, Price)
+INSERT IGNORE INTO Foods (Category, Title, Description, Price)
 VALUES ('Burger', 'Cheese Burger', 'Prepared with beef patty, cheese, burger sauce, pickles & onion', 650),
        ('Burger', 'Bacon Cheese Burger', 'Prepared with beef patty, 2 slices cheese, bacon & burger sauce', 500),
        ('Burger', 'Double Cheese Burger', 'Prepared with 2 beef patties, double cheese, burger sauce & onion', 640),
@@ -98,7 +94,7 @@ VALUES ('Burger', 'Cheese Burger', 'Prepared with beef patty, cheese, burger sau
        ('Sides', 'Naga Drumsticks', 'You like it HOT!! Its for you', 120);
 
 # insert comment data
-INSERT INTO Comments (ParentID, FoodID, PostedBy, Comment)
-VALUES ('0', '2', 'Raofin', 'The potato juice was amazing =)'),
-       ('1', '2', 'Bill Gates', 'True'),
-       ('0', '6', 'Elon Musk', 'I have to say, I enjoyed every single bite of the meal.');
+INSERT IGNORE INTO Comments (CommentID, ParentID, FoodID, PostedBy, Comment)
+VALUES ('1', '0', '2', 'Raofin', 'The potato juice was amazing =)'),
+       ('2', '1', '2', 'Bill Gates', 'True'),
+       ('3', '0', '6', 'Elon Musk', 'I have to say, I enjoyed every single bite of the meal.');
