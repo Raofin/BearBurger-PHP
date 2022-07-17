@@ -1,7 +1,7 @@
 $('#update-form').validate({
     submitHandler: form => {
         $.ajax({
-            url: '../controllers/updateValidate.php',
+            url: '../controllers/ModifyValidate.php',
             method: "POST",
             data: $('#update-form').serialize(),
             cache: false,

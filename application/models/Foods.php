@@ -46,7 +46,7 @@
                 <p class="food-price">Price: ' . $row['Price'] . 'tk</p>
                 <div>
                     <a href="Payment.php?id=' . $row['FoodID'] . '"><button type="button" class="button">Buy</button></a>
-                    <a href="FoodReview.php?id=' . $row['FoodID'] . '"><button type="button" class="button">Review</button></a>
+                    <a href="Comment.php?id=' . $row['FoodID'] . '"><button type="button" class="button">Comment</button></a>
                 </div>
             </div>
         </td>';

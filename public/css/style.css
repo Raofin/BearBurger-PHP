@@ -9,7 +9,8 @@
 html {
     position: relative;
     min-height: 100%;
-    background: url(../img/background.png) no-repeat center center fixed;
+    background: url(../img/background.jpg) no-repeat center center fixed;
+    background-size: cover;
 }
 
 body {
@@ -93,6 +94,10 @@ footer {
     transition: all 0.3s ease 0s;
     text-decoration: none;
     color: dodgerblue;
+}
+
+.footer p {
+    padding: 0;
 }
 
 body,
@@ -197,10 +202,13 @@ form a {
 .form-user-profile {
     font-size: 20px;
     position: relative;
+    display: flex;
     overflow: hidden;
+    flex-direction: column;
     width: 460px;
     min-width: 400px;
     height: 100%;
+    margin: 0 auto 140px auto;
     padding: 50px;
     text-align: center;
     color: #fff;
@@ -474,7 +482,7 @@ fieldset {
 }
 
 .form-container #login-form {
-    min-height: 450px;
+    min-height: 400px;
 }
 
 .form-container #register-form {
@@ -742,4 +750,41 @@ input::-ms-clear {
 
 #database-error h1 {
     padding: 15px;
+}
+
+.welcome-logo {
+    position: relative;
+    width: 40%;
+    height: 40%;
+}
+
+.welcome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    width: 700px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    filter: drop-shadow(0px 3px 3px black);
+}
+
+.welcome-message {
+    margin: 0 50px;
+    color: white;
+}
+
+.welcome-title {
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.welcome .button:hover {
+    background-color: #389afd;
+}
+
+.welcome .button:active {
+    background-color: #389afd;
 }

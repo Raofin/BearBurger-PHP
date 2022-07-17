@@ -52,6 +52,6 @@
         </form>
     </div>
 
-    <script src="../../public/js/UpdateValidate.js"></script>
+    <script src="../../public/js/ModifyValidate.js"></script>
 
 <?php include 'Footer.php' ?>
