@@ -1,3 +1,3 @@
 <?php
-    header("Location: application/views/Home.php");
+    header("Location: application/views/Welcome.php");
     die();
