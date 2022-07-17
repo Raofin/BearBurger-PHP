@@ -20,7 +20,7 @@
 <body>
 
 <header>
-    <a class="logo" href="Home.php"><img src="../../public/img/logo.svg" alt="logo"></a>
+    <a class="logo" href="Welcome.php"><img src="../../public/img/nav-logo.svg" alt="logo"></a>
 
     <nav>
         <ul class="nav-links">
