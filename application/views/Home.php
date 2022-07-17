@@ -1,7 +1,4 @@
-<?php
-    require 'Header.php';
-    verifyNotLoggedIn();
-?>
+<?php require 'Header.php' ?>
 
     <div class="food-container">
         <h1 style="text-align: center">Order Your Favourite Foods!</h1>

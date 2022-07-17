@@ -12,12 +12,10 @@
 <body>
 
 <header>
-    <a class="logo" href="Home.php"><img src="../../public/img/nav-logo.svg" alt="logo"></a>
+    <a class="logo" href=""><img src="../../public/img/nav-logo.svg" alt="logo"></a>
     <nav>
         <ul class="nav-links">
             <li><a href='About.php'>About</a></li>
-            <li><a href='Login.php'>Log In</a></li>
-            <li><a href='Register.php'>Register</a></li>
         </ul>
     </nav>
 </header>

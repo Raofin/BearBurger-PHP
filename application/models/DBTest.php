@@ -6,7 +6,9 @@
         $mysqli = new mysqli(HOSTNAME, USERNAME, PASSWORD);
         $mysqliResult = $mysqli->multi_query(file_get_contents("../../database/BearBurger.sql"));
         $mysqli->close();
-        echo "<script>location.href = '../views/Login.php'</script>";
+        header("Location: ../views/Home.php");
+        die();
     } catch (Exception $ex) {
-        echo "<script>location.href = '../views/DatabaseError.php'</script>";
+        header("Location: ../views/DatabaseError.php");
+        die();
     }
