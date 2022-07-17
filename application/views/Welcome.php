@@ -13,16 +13,21 @@
 
 <header>
     <a class="logo" href="Home.php"><img src="../../public/img/nav-logo.svg" alt="logo"></a>
-
     <nav>
         <ul class="nav-links">
             <li><a href='About.php'>About</a></li>
+            <li><a href='Login.php'>Log In</a></li>
+            <li><a href='Register.php'>Register</a></li>
         </ul>
     </nav>
 </header>
-<div id="database-error">
-    <h1>Connection Error</h1>
-    <p>Please make sure that MySQL is running and the Database is correctly configured.</p>
+<div class="welcome" id="welcome">
+    <img class="welcome-logo" src="../../public/img/logo.svg" alt="logo">
+    <div class="welcome-message">
+        <h1 class="welcome-title">Eat and Order<br>Do It Easy</h1>
+        <p>Choose your favourite foods and get it to taste the amazing taste, enjoy it with your family or friends.</p>
+        <button class="button" onclick="location.href='../models/DBTest.php'">Get Started</button>
+    </div>
 </div>
 
 </body>
