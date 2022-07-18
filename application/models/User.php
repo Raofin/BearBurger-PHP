@@ -78,6 +78,7 @@
                 $_SESSION['password'] = $row['Password'];
                 $_SESSION['phone'] = $row['PhoneNumber'];
                 $_SESSION['gender'] = $row['Gender'];
+                $_SESSION['spent'] = $row['Spent'];
                 $_SESSION['joined'] = $row['RegDate'];
             }
             $_SESSION['loggedIn'] = true;

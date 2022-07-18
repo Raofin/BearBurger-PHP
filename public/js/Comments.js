@@ -3,6 +3,7 @@ $(document).ready(() => loadComments());
 let foodId = $('#food-id').text();
 let ajaxUrl = '../models/Comment.php?type=post&foodId=' + foodId;
 let isReply = false;
+let message = 'Your comment has been posted.';
 
 function loadComments() {
     $.ajax({
@@ -35,10 +36,12 @@ function changeAjaxUrl(commentId = 0) {
     if (isReply) {
         ajaxUrl = '../models/Comment.php?type=post&foodId=' + foodId;
         $('#submit').prop('value', 'Post');
+        message = 'Your reply has been posted.';
         isReply = false;
     } else {
         ajaxUrl = '../models/Comment.php?type=reply&commentId=' + commentId + '&foodId=' + foodId;
         $('#submit').prop('value', 'Reply');
+        message = 'Your comment has been posted.';
         isReply = true;
     }
 }
@@ -58,7 +61,7 @@ $('#comment-form').validate({
                         changeAjaxUrl();
                     }
                     $('#comment-prompt-message')
-                        .text('Your comment has been posted.')
+                        .text(message)
                         .addClass('success-message');
                     $('#comment-form').trigger("reset");
 

@@ -9,10 +9,6 @@
             <center>
                 <table>
                     <tr>
-                        <td>User ID:</td>
-                        <td><?php echo $_SESSION['id'] ?></td>
-                    </tr>
-                    <tr>
                         <td>Username:</td>
                         <td><input type="text" id="username" name="username"
                                    value="<?php echo $_SESSION['username'] ?>"></td>
@@ -35,12 +31,15 @@
                         <td><?php echo $_SESSION['gender'] ?></td>
                     </tr>
                     <tr>
+                        <td>Spent:</td>
+                        <td><?php echo $_SESSION['spent'] ?> tk</td>
+                    </tr>
+                    <tr>
                         <td>Joined:</td>
                         <td><?php echo date('F j, Y', strtotime($_SESSION['joined'])) ?></td>
                     </tr>
                 </table>
             </center>
-            <br>
             <div>
                 <div class="center-text">
                     <p id="message"></p>
