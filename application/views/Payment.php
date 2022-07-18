@@ -64,7 +64,7 @@
                     <p id="message"></p>
                 </div>
                 <div class="center">
-                    <input type="submit" value="Pay" class="button">
+                    <input class="button" id="pay" type="submit" value="Pay">
                 </div>
             </div>
         </form>

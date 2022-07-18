@@ -5,6 +5,7 @@ let price = priceId.innerText.slice(0, -2); // remove 'tk'
 let takaId = document.getElementById('taka');
 let dollarId = document.getElementById('dollar');
 let poundId = document.getElementById('pound');
+let paid = false;
 
 takaId.addEventListener('click',
     function (event) {
@@ -42,6 +43,11 @@ poundId.addEventListener('click',
 form.addEventListener('submit', function (event) {
     event.preventDefault();
 
+    if (paid) {
+        location.href = '../../application/views/Home.php';
+        return;
+    }
+
     let name = document.getElementById('name');
     let cardNumber = document.getElementById('cardNumber');
     let expDate = document.getElementById('expDate');
@@ -60,6 +66,9 @@ form.addEventListener('submit', function (event) {
     else cvv.classList.remove('form-input-error');
 
     if (name.value !== '' && cardNumber.value !== '' && expDate.value !== '' && cvv.value !== '') {
+        pay();
+        document.getElementById('pay').value = 'Go Back';
+        paid = true;
         messageDiv.innerHTML = '';
         messageDiv.innerHTML += '<p class="success-message center-text center-text">Payment Successful.</p>';
         name.value = cardNumber.value = expDate.value = cvv.value = '';
@@ -68,3 +77,9 @@ form.addEventListener('submit', function (event) {
         messageDiv.innerHTML += '<p class="error-message center-text">Please fill out all the fields.</p>';
     }
 });
+
+function pay() {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "../models/payment.php?price=" + price);
+    xhr.send();
+}
