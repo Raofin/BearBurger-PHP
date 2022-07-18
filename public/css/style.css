@@ -686,15 +686,12 @@ input::-ms-clear {
 }
 
 .replying-to {
-    display: flex;
     justify-content: center;
     margin: 25px 10% -30px 10%;
-    padding: 5px 20px 20px 5px;
+    padding: 5px 20px 20px 20px;
     text-align: center;
     border-radius: 10px;
     background-color: #002e5e;
-
-
 }
 
 /*
@@ -846,8 +843,12 @@ input::-ms-clear {
 }
 
 .project-link {
+    font-weight: bold;
     flex-direction: column;
     padding-bottom: 10px;
     text-align: center;
+}
+
+.bold {
     font-weight: bold;
 }

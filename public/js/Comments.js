@@ -4,6 +4,17 @@ let foodId = $('#food-id').text();
 let ajaxUrl = '../models/Comment.php?type=post&foodId=' + foodId;
 let isReply = false;
 
+function loadComments() {
+    $.ajax({
+        url: '../models/Comment.php?type=load&foodId=' + foodId,
+        method: "GET",
+        success: data => {
+            if (data !== '')
+                $('#all-comments').html(data).show();
+        }
+    })
+}
+
 function reply(commentId) {
     if (isReply) {
         $('#replying-to').removeClass('replying-to').text('');
@@ -12,9 +23,10 @@ function reply(commentId) {
     }
 
     let comment = $('#comment-id-' + commentId + ' #posted-comment').text();
-    let commentHtml = '"' + comment + '" — <i><b>' + $('#comment-id-' + commentId + ' #reviewer-name').text() + '</b></i>';
-    $('#replying-to').html(commentHtml).addClass('replying-to');
+    let reviewerName = $('#comment-id-' + commentId + ' #reviewer-name').text();
+    let commentHtml = '<b>Replying to </b>"' + comment + '"<b> — <i>' + reviewerName + '</i></b>';
 
+    $('#replying-to').html(commentHtml).addClass('replying-to');
     $('#comment').focus();
     changeAjaxUrl(commentId);
 }
@@ -30,7 +42,6 @@ function changeAjaxUrl(commentId = 0) {
         isReply = true;
     }
 }
-
 
 $('#comment-form').validate({
     submitHandler: form => {
@@ -70,14 +81,3 @@ $('#comment-form').validate({
     },
     errorClass: "form-input-error error-message"
 })
-
-function loadComments() {
-    $.ajax({
-        url: '../models/Comment.php?type=load&foodId=' + foodId,
-        method: "GET",
-        success: data => {
-            if (data !== '')
-                $('#all-comments').html(data).show();
-        }
-    })
-}
