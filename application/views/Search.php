@@ -1,7 +1,4 @@
-<?php
-    require 'Header.php';
-    verifyNotLoggedIn();
-?>
+<?php require 'Header.php' ?>
 
     <center>
         <div class="food-container">
@@ -18,4 +15,4 @@
 
     <script src="../../public/js/Search.js"></script>
 
-<?php include 'Footer.php'; ?>
+<?php include 'Footer.php' ?>
