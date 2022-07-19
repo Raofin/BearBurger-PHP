@@ -1,7 +1,7 @@
 $('#register-form').validate({
     submitHandler: form => {
         $.ajax({
-            url: '../controllers/registrationValidate.php',
+            url: '../controllers/RegistrationValidate.php',
             method: "POST",
             data: $('#register-form').serialize(),
             cache: false,

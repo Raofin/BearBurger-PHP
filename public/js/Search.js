@@ -11,7 +11,7 @@ function searchAndFetch(foodTitle) {
     const foodsTable = document.getElementById("foods-table");
     const xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "../models/foods.php?search=" + foodTitle);
+    xhr.open("GET", "../models/Foods.php?search=" + foodTitle);
     xhr.onload = function () {
         foodsTable.innerHTML = '';
 

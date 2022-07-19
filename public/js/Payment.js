@@ -80,6 +80,6 @@ form.addEventListener('submit', function (event) {
 
 function pay() {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "../models/payment.php?price=" + price);
+    xhr.open("GET", "../models/Payment.php?price=" + price);
     xhr.send();
 }
