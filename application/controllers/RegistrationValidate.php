@@ -15,7 +15,13 @@
         filter_var($email, FILTER_VALIDATE_EMAIL) &&
         checkLength($password, 5) &&
         $password === $cPassword &&
-        checkLength($phone, 10) && is_numeric($phone) &&
+        validatePhone($phone) &&
         !empty($gender)
     ) echo register();
     else echo 'Please fill out all the fields properly';
+
+    function validatePhone($phone)
+    {
+        $regex = "/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[456789]\d{9}|(\d[ -]?){10}\d$/";
+        return preg_match($regex, $phone);
+    }

@@ -63,6 +63,7 @@
         </form>
     </div>
 
+    <script src="../../public/js/Logic.js"></script>
     <script src="../../public/js/RegistrationValidate.js"></script>
 
 <?php include 'Footer.php' ?>

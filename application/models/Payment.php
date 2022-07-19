@@ -14,4 +14,4 @@
                WHERE UserID = $userId";
 
     executeQuery($query1);
-    $_SESSION['spent'] = executeQuery($query2)->fetch_assoc()['UserID'];
+    $_SESSION['spent'] = executeQuery($query2)->fetch_assoc()['Spent'];

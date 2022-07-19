@@ -52,7 +52,7 @@ $('#register-form').validate({
         },
         phone: {
             required: true,
-            number: true,
+            phoneRegex: true,
             minlength: 11,
             maxlength: 15,
             normalizer: value => removeWhitespaces(value, '#phone'),
@@ -93,23 +93,3 @@ $('#register-form').validate({
 
 $('input[type=radio][name=gender]').change(() =>
     $('#radio-button-box').removeClass('form-input-error'));
-
-$('#password-view').click(() => {
-    if ($('#password-view').text() === 'Show') {
-        $('#password, #cPassword').prop('type', 'text');
-        $('#password-view').html('Hide');
-    } else {
-        $('#password, #cPassword').prop('type', 'password');
-        $('#password-view').html('Show');
-    }
-})
-
-function removeWhitespaces(value, id) {
-    value = value.replace(/\s/g, ''); // remove whitespaces
-    $(id).val(value);
-    return $.trim(value);
-}
-
-jQuery.validator.addMethod('emailRegex', function (value, element) {
-    return this.optional(element) || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
-}, 'Please enter a valid email address.');

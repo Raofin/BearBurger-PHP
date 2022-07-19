@@ -45,23 +45,3 @@ $('#login-form').validate({
     },
     errorClass: "form-input-error warning-message"
 })
-
-$('#password-view').click(() => {
-    if ($('#password-view').text() === 'Show') {
-        $('#password').prop('type', 'text');
-        $('#password-view').html('Hide');
-    } else {
-        $('#password').prop('type', 'password');
-        $('#password-view').html('Show');
-    }
-})
-
-function removeWhitespaces(value, id) {
-    value = value.replace(/\s/g, ''); // remove whitespaces
-    $(id).val(value);
-    return $.trim(value);
-}
-
-jQuery.validator.addMethod('emailRegex', function (value, element) {
-    return this.optional(element) || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
-}, 'Please enter a valid email address.');

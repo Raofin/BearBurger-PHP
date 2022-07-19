@@ -41,6 +41,7 @@
         </form>
     </div>
 
+    <script src="../../public/js/Logic.js"></script>
     <script src="../../public/js/LoginValidate.js"></script>
 
 <?php include 'Footer.php' ?>
