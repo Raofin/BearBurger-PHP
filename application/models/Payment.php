@@ -6,8 +6,12 @@
     $userId = $_SESSION['id'];
     $amount = $_REQUEST['price'];
 
-    $query = "UPDATE Users
-              SET Spent = Spent + $amount
-              WHERE UserID = $userId";
+    $query1 = "UPDATE Users
+               SET Spent = Spent + $amount
+               WHERE UserID = $userId";
+    $query2 = "SELECT * 
+               FROM Users 
+               WHERE UserID = $userId";
 
-    executeQuery($query);
+    executeQuery($query1);
+    $_SESSION['spent'] = executeQuery($query2)->fetch_assoc()['UserID'];
