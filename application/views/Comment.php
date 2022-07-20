@@ -11,7 +11,7 @@
                 <p id="food-id" hidden><?php echo $_REQUEST['id'] ?></p>
             </div>
 
-            <div class="review-box">
+            <div class="comment-box">
                 <h2>Comments</h2>
                 <div id="all-comments" hidden></div>
                 <div>

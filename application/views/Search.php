@@ -5,7 +5,7 @@
             <h1 style="text-align: center">Order Your Favourite Foods!</h1>
 
             <form action="" method="post">
-                <input class="search-inputbox" id="search-box"
+                <input class="search-input-box" id="search-box"
                        placeholder="Type anything to search"
                        spellcheck="false" type="text"><br><br>
             </form>

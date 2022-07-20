@@ -70,7 +70,7 @@ form.addEventListener('submit', function (event) {
         document.getElementById('pay').value = 'Go Back';
         paid = true;
         messageDiv.innerHTML = '';
-        messageDiv.innerHTML += '<p class="success-message center-text center-text">Payment Successful.</p>';
+        messageDiv.innerHTML += '<p class="success center-text center-text">Payment Successful.</p>';
         name.value = cardNumber.value = expDate.value = cvv.value = '';
     } else {
         messageDiv.innerHTML = '';

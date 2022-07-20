@@ -10,7 +10,7 @@ $('#register-form').validate({
                 if (data === 'Success') {
                     $('#prompt-message')
                         .text('Registration Successful')
-                        .addClass('success-message');
+                        .addClass('success');
                     $('#register-form').trigger('reset');
                 } else {
                     $('#prompt-message')

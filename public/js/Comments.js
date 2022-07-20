@@ -24,7 +24,7 @@ function reply(commentId) {
     }
 
     let comment = $('#comment-id-' + commentId + ' #posted-comment').text();
-    let reviewerName = $('#comment-id-' + commentId + ' #reviewer-name').text();
+    let reviewerName = $('#comment-id-' + commentId + ' #author-name').text();
     let commentHtml = '<b>Replying to </b>"' + comment + '"<b> — <i>' + reviewerName + '</i></b>';
 
     $('#replying-to').html(commentHtml).addClass('replying-to');
@@ -62,7 +62,7 @@ $('#comment-form').validate({
                     }
                     $('#comment-prompt-message')
                         .text(message)
-                        .addClass('success-message');
+                        .addClass('success');
                     $('#comment-form').trigger("reset");
 
                     loadComments();

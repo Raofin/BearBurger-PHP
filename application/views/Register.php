@@ -5,7 +5,7 @@
 
     <div class="form-container">
         <form id="register-form" method="POST">
-            <h2 class="form-title">Create an Account</h2>
+            <h2 class="login-form-title">Create an Account</h2>
 
             <fieldset>
                 <div>
