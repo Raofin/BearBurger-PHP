@@ -13,7 +13,7 @@
         $gender = $_POST['gender'];
 
         $query = "INSERT INTO Users (Username, Email, Password, PhoneNumber, Gender, Spent) 
-                          VALUES ('$username', '$email', '$password', '$phoneNumber', '$gender', 0);";
+                  VALUES ('$username', '$email', '$password', '$phoneNumber', '$gender', 0);";
 
         if (isUsernameUnique($username) && isEmailUnique($email)) {
             executeQuery($query);
@@ -31,11 +31,18 @@
         $phoneNumber = $_POST['phone'];
         $oldEmail = $_SESSION['email'];
 
+        $usernameQuery = $username === $_SESSION['username'] ? '' : " Username='$username', ";
+        $emailQuery = $email === $_SESSION['email'] ? '' : " Email='$email', ";
         $query = "UPDATE Users
-                  SET Username='$username', Email='$email', Password='$password', PhoneNumber='$phoneNumber'
-                  WHERE email='$oldEmail'";
+                  SET $usernameQuery $emailQuery Password='$password', PhoneNumber='$phoneNumber'
+                  WHERE Email='$oldEmail'";
 
-        if (isUsernameUnique($username) && isEmailUnique($email)) {
+        $isUsernameOk = true;
+        $isEmailOk = true;
+
+        if ($usernameQuery !== '') $isUsernameOk = isUsernameUnique($username);
+        if ($emailQuery !== '') $isEmailOk = isEmailUnique($username);
+        if ($isUsernameOk && $isEmailOk) {
             executeQuery($query);
             login();
             return "Success";
@@ -60,7 +67,7 @@
     {
         $rememberedUser = $_COOKIE["RememberedUser"];
         $query = "SELECT * FROM Users
-                  WHERE Username = '$rememberedUser' OR email = '$rememberedUser'";
+                  WHERE Username = '$rememberedUser' OR Email = '$rememberedUser'";
 
         return sessionLogin($query);
     }
@@ -96,5 +103,4 @@
     {
         $checkEmailQuery = "SELECT * FROM Users WHERE Email = '$email'";
         return executeQuery($checkEmailQuery)->num_rows === 0;
-
     }

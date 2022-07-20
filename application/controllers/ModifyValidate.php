@@ -9,9 +9,9 @@
     $phone = removeWhitespaces($_POST['phone']);
 
     if (
-        checkLength($username, 3) &&
-        filter_var($email, FILTER_VALIDATE_EMAIL) &&
-        checkLength($password, 5) &&
-        checkLength($phone, 10) && is_numeric($phone)
+        checkLength($username)
+        && filter_var($email, FILTER_VALIDATE_EMAIL)
+        && checkLength($password, 5)
+        && validatePhone($phone)
     ) echo update();
     else echo 'Please fill out all the fields properly';
