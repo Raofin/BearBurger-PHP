@@ -87,10 +87,10 @@
         $style = $ParentId !== 0 ? "style=\"margin-left: " . $marginLeft . "px\"" : "";
 
         return '
-            <div class="reviews" id="comments" ' . $style . '">
+            <div class="comments-div" id="comments" ' . $style . '">
                 <div id="comment-id-' . $row["CommentID"] . '">
                     <a class="reply" onclick="return reply(' . $row["CommentID"] . ')">Reply</a>
-                    <p><span class="reviewer-name" id="reviewer-name">' . $row["PostedBy"] . '</span> <i>on ' . $date . '</i></p>
+                    <p><span class="author-name" id="author-name">' . $row["PostedBy"] . '</span> <i>on ' . $date . '</i></p>
                     <p id="posted-comment">' . $row["Comment"] . '</p>
                 </div>    
             </div>';

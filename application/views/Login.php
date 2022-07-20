@@ -5,7 +5,7 @@
 
     <div class="form-container">
         <form id="login-form" method="POST">
-            <h2 class="form-title">Log In</h2>
+            <h2 class="login-form-title">Log In</h2>
 
             <fieldset>
                 <div>
