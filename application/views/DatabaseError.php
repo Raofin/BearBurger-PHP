@@ -19,9 +19,10 @@
         </ul>
     </nav>
 </header>
-<div id="database-error">
+<div id="database-error" class="database-error">
     <h1>Connection Error</h1>
     <p>Please make sure that MySQL is running and the Database is correctly configured.</p>
+    <button class="button" onclick="location.href='../models/DBTest.php'">Try again</button>
 </div>
 
 </body>

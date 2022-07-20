@@ -778,11 +778,11 @@ input::-ms-clear {
     padding-bottom: 20px;
 }
 
-.welcome .button:hover {
+.welcome .button:hover, .database-error .button:hover {
     background-color: #389afd;
 }
 
-.welcome .button:active {
+.welcome .button:active, .database-error .button:active {
     background-color: #389afd;
 }
 
