@@ -15,7 +15,7 @@
     <a class="logo" href="Welcome.php"><img src="../../public/img/nav-logo.svg" alt="logo"></a>
     <nav>
         <ul class="nav-links">
-            <li><a href='ProjectDetails.php'>About</a></li>
+            <li><a href='ProjectDetails.php'>Project Details</a></li>
         </ul>
     </nav>
 </header>
