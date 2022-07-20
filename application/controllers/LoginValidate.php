@@ -8,6 +8,9 @@
     $usernameOrEmail = removeWhitespaces($_POST['usernameOrEmail']);
     $password = removeWhitespaces($_POST['password']);
 
+    /* if both inputs are not empty, call the login(). then if it
+       returns true, verify if the user checked remember me checkbox
+       and set cookie. finally make $data['success'] = true */
     if (!empty($usernameOrEmail) && !empty($password)) {
         if (login()) {
             if (isset($_POST['remember']))
@@ -17,4 +20,7 @@
     } else $promptMessage = "Please fill out all the fields properly";
 
     $data['promptMessage'] = $promptMessage;
+
+    /* make the $data array into a json string and echo that to
+       make it easy use after the ajax call */
     echo json_encode($data);

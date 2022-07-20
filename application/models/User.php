@@ -15,6 +15,9 @@
         $query = "INSERT INTO Users (Username, Email, Password, PhoneNumber, Gender, Spent) 
                   VALUES ('$username', '$email', '$password', '$phoneNumber', '$gender', 0);";
 
+        /* execute query only if both username and email is unique.
+           because these are unique in the database as we have the
+           feature to login as either username or email */
         if (isUsernameUnique($username) && isEmailUnique($email)) {
             executeQuery($query);
             return "Success";
@@ -22,7 +25,7 @@
             return "Your <b>username</b> or <b>email address</b> has already been used in an existing account.";
     }
 
-    // update user details
+    // modify/update user details
     function update()
     {
         $username = $_POST['username'];
@@ -31,6 +34,9 @@
         $phoneNumber = $_POST['phone'];
         $oldEmail = $_SESSION['email'];
 
+        /* if the "$_POST['username']" doesn't match with the
+           previous username stored in  "$_SESSION['username']",
+           write query otherwise keep it empty */
         $usernameQuery = $username === $_SESSION['username'] ? '' : " Username='$username', ";
         $emailQuery = $email === $_SESSION['email'] ? '' : " Email='$email', ";
         $query = "UPDATE Users
@@ -40,6 +46,8 @@
         $isUsernameOk = true;
         $isEmailOk = true;
 
+        /* if the "$_POST['username']" is new, call "isUsernameUnique($username)"
+           and return it in the $isUsernameOk */
         if ($usernameQuery !== '') $isUsernameOk = isUsernameUnique($username);
         if ($emailQuery !== '') $isEmailOk = isEmailUnique($username);
         if ($isUsernameOk && $isEmailOk) {
