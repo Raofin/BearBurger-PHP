@@ -1,7 +1,7 @@
 <?php require 'Header.php' ?>
 
     <div class="food-container">
-        <h1 style="text-align: center">Order Your Favourite Foods!</h1>
+        <h1>Order Your Favourite Foods!</h1>
 
         <form method="post">
             <h2 class="category-title" id="category-title">

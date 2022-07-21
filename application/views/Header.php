@@ -11,6 +11,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../public/img/logo.svg"/>
+    <link rel="preload" href="../../public/img/background.jpg"/>
     <link href="../../public/css/style.css" type="text/css" rel="stylesheet">
     <script src="../../public/js/jquery-3.6.0.min.js"></script>
     <script src="../../public/js/jquery.validate.js"></script>
@@ -35,6 +37,7 @@
                 <li><a href='../controllers/Logout.php'>Log Out</a></li>
                 <li class='username'><a href='Profile.php'>{$_SESSION['username']}</a></li>";
             ?>
+
             <li><a class="project-details" href='ProjectDetails.php'>Project Details</a></li>
         </ul>
     </nav>

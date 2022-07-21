@@ -16,7 +16,7 @@
                 <div>
                     <label for="password">Password</label>
                     <div class="show-password">
-                        <span id="password-view">Show</span>
+                        <span id="password-view"><b>Show</b></span>
                     </div>
                     <input id="password" name="password" autocomplete="on" class="form-input-box"
                            placeholder="Enter your password here" type="password">

@@ -12,7 +12,7 @@
             </div>
 
             <div class="comment-box">
-                <h2>Comments</h2>
+                <h2><label for="comment">Comments</label></h2>
                 <div id="all-comments" hidden></div>
                 <div>
                     <div id="replying-to"></div>

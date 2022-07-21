@@ -22,7 +22,7 @@
                     <div>
                         <label class="form-label" for="password">Password</label>
                         <div class="show-password">
-                            <span id="password-view">Show</span>
+                            <span id="password-view"><b>Show</b></span>
                         </div>
                         <input autocomplete="off" class="form-input-box" id="password" name="password"
                                placeholder="Enter your password here" type="password">

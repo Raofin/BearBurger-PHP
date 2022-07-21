@@ -1,17 +1,15 @@
 <?php require 'Header.php' ?>
 
-    <center>
-        <div class="food-container">
-            <h1 style="text-align: center">Order Your Favourite Foods!</h1>
+    <div class="food-container">
+        <h1><label for="search-box">Order Your Favourite Foods!</label></h1>
 
-            <form action="" method="post">
-                <input class="search-input-box" id="search-box"
-                       placeholder="Type anything to search"
-                       spellcheck="false" type="text"><br><br>
-            </form>
-            <table id="foods-table"></table>
-        </div>
-    </center>
+        <form method="post">
+            <input class="search-input-box" id="search-box"
+                   placeholder="Type anything to search"
+                   spellcheck="false" type="text"><br><br>
+        </form>
+        <table id="foods-table"></table>
+    </div>
 
     <script src="../../public/js/Search.js"></script>
 

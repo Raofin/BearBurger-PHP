@@ -24,8 +24,8 @@ function reply(commentId) {
     }
 
     let comment = $('#comment-id-' + commentId + ' #posted-comment').text();
-    let reviewerName = $('#comment-id-' + commentId + ' #author-name').text();
-    let commentHtml = '<b>Replying to </b>"' + comment + '"<b> — <i>' + reviewerName + '</i></b>';
+    let reviewerName = $('#comment-id-' + commentId + ' #author-name').text().replace(/\s/g , '&nbsp;');
+    let commentHtml = '<b>Replying to </b>"' + comment + '"<b> —&nbsp;<i>' + reviewerName + '</i></b>';
 
     $('#replying-to').html(commentHtml).addClass('replying-to');
     $('#comment').focus();
