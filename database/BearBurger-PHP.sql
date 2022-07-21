@@ -1,10 +1,9 @@
-# create database
-CREATE DATABASE IF NOT EXISTS BearBurger;
+## schema ##
 
-# select the database
-USE BearBurger;
+CREATE DATABASE IF NOT EXISTS BearBurger_PHP;
 
-# create users table
+USE BearBurger_PHP;
+
 CREATE TABLE IF NOT EXISTS Users
 (
     UserID      INT AUTO_INCREMENT PRIMARY KEY,
@@ -17,18 +16,6 @@ CREATE TABLE IF NOT EXISTS Users
     RegDate     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-# insert user data
-INSERT IGNORE INTO Users (Username, Email, Password, PhoneNumber, Gender, Spent)
-VALUES ('Raofin', 'hello@raofin.net', 'Asdfgh', '+8801234567890', 'male', 6801),
-       ('Bill Gates', 'billgates@outlook.com', 'billgates68457', '+6963343233', 'male', 9960),
-       ('Elon Musk', 'elonmusk@yahoo.com', 'elon123', '+9668508170248', 'male', 7856),
-       ('Jack Ma', 'jackma@gmail.com', 'jackma144', '+1667698473784', 'male', 4567),
-       ('Steve Jobs', 'stevejobs@icloud.com', 'steve1213', '+1527475095845', 'male', 421),
-       ('Jeff Bezos', 'jeffbezos@gmail.com', 'jeffbe1334', '+8966295324845', 'male', 2152),
-       ('Mark Zuckerberg', 'markzuckerberg@live.com', 'markz131', '+2657146731697', 'male', 3972),
-       ('Sundar Pichai', 'sundarpichai@gmail.com', 'sundarp296', '+9815680737969', 'male', 1546);
-
-# create foods table
 CREATE TABLE IF NOT EXISTS Foods
 (
     FoodID      INT AUTO_INCREMENT PRIMARY KEY,
@@ -38,7 +25,6 @@ CREATE TABLE IF NOT EXISTS Foods
     Price       INT         NOT NULL
 );
 
-# create users table
 CREATE TABLE IF NOT EXISTS Comments
 (
     CommentID INT AUTO_INCREMENT PRIMARY KEY,
@@ -50,13 +36,25 @@ CREATE TABLE IF NOT EXISTS Comments
     CONSTRAINT FoodID_FK FOREIGN KEY (FoodID) REFERENCES foods (FoodID)
 );
 
-# insert food data
+
+## data ##
+
+INSERT IGNORE INTO Users (Username, Email, Password, PhoneNumber, Gender, Spent)
+VALUES ('Raofin', 'hello@raofin.net', 'Asdfgh', '+8801234567890', 'male', 6801),
+       ('Bill Gates', 'billgates@outlook.com', 'billgates68457', '+6963343233', 'male', 9960),
+       ('Elon Musk', 'elonmusk@yahoo.com', 'elon123', '+9668508170248', 'male', 7856),
+       ('Jack Ma', 'jackma@gmail.com', 'jackma144', '+1667698473784', 'male', 4567),
+       ('Steve Jobs', 'stevejobs@icloud.com', 'steve1213', '+1527475095845', 'male', 421),
+       ('Jeff Bezos', 'jeffbezos@gmail.com', 'jeffbe1334', '+8966295324845', 'male', 2152),
+       ('Mark Zuckerberg', 'markzuckerberg@live.com', 'markz131', '+2657146731697', 'male', 3972),
+       ('Sundar Pichai', 'sundarpichai@gmail.com', 'sundarp296', '+9815680737969', 'male', 1546);
+
 INSERT IGNORE INTO Foods (Category, Title, Description, Price)
 VALUES ('Burger', 'Cheese Burger', 'Prepared with beef patty, cheese, burger sauce, pickles & onion', 650),
        ('Burger', 'Bacon Cheese Burger', 'Prepared with beef patty, 2 slices cheese, bacon & burger sauce', 500),
        ('Burger', 'Double Cheese Burger', 'Prepared with 2 beef patties, double cheese, burger sauce & onion', 640),
        ('Burger', 'Lil Smoke', 'Prepared with beef patty, cheese, bbq sauce, burger sauce, pickles & onion', 160),
-       ('Burger', 'Big Smoke', 'Prepared with 2 beef patties, 2 slices cheese, bbq sauce, burger sauce & onion', 280),
+       ('Burger', 'Beef Smoke', 'Prepared with 2 beef patties, 2 slices cheese, bbq sauce, burger sauce & onion', 280),
        ('Burger', 'Juicy Burger', 'Prepared with potato juice, beef patties, double cheese & burger sauce', 960),
        ('Pizza', 'BBQ Chicken Pizza', 'Topped with grilled chicken, bbq sauce & mozzarella cheese', 240),
        ('Pizza', 'Chicken Meatball Pizza', 'Topped with chicken meatball, tomato sauce & mozzarella cheese', 960),
@@ -69,12 +67,12 @@ VALUES ('Burger', 'Cheese Burger', 'Prepared with beef patty, cheese, burger sau
        ('Salad', 'Grilled Chicken Salad', 'Topped with chicken and secret spice ', 310),
        ('Salad', 'Russian Salad', 'Authentic russian taste with lots of veggies and secret sauce', 370),
        ('Salad', 'Korean Beef Salad', 'Made with beed in korean spice and sauce', 560),
-       ('Pasta', 'Ovenbaked Pasta', 'Topped with black olive, chicken ,capsicum & green chili', 450),
+       ('Pasta', 'Bitch Lasagna', 'Baked casserole made with wide flat pasta and layered with fillings such as ragú.', 996),
+       ('Pasta', 'Ovenbaked Pasta', 'Topped with black olive, chicken, capsicum & green chili', 450),
        ('Pasta', 'BBQ Grill Chicken Pasta', 'Topped with grilled chicken, bbq sauce & mozzarella cheese', 340),
-       ('Pasta', 'Lasagnia', 'Topped with chicken & spices', 460),
        ('Pasta', 'Seafood Pasta', 'Topped with seafood & mushroom', 350),
        ('Pasta', 'American Mac & Cheese', 'Topped with macarony & mozzarella cheese', 560),
-       ('Drinks', 'Lemonade', 'taste of fresh lemon and freshness', 110),
+       ('Drinks', 'Lemonade', 'Taste of fresh lemon and freshness', 110),
        ('Drinks', 'Iced lemon Tea', 'Lemon tea but with chilled ice', 200),
        ('Drinks', 'Lemon lassi', 'Taste of lassi with tanginess of lemon', 170),
        ('Drinks', 'Milk Shake', 'Taste of heavy cream and milk', 140),
@@ -91,9 +89,8 @@ VALUES ('Burger', 'Cheese Burger', 'Prepared with beef patty, cheese, burger sau
        ('Sides', 'Medium French Fry', 'Delicious french fry in medium', 90),
        ('Sides', 'Large French Fry', 'Delicious french fry in large', 110),
        ('Sides', 'Chicken Fingers', 'Chicken fried in finger sized', 130),
-       ('Sides', 'Naga Drumsticks', 'You like it HOT!! Its for you', 120);
+       ('Sides', 'Naga Drumsticks', 'Soft spicy chicken with crunchy outer', 120);
 
-# insert comment data
 INSERT IGNORE INTO Comments (CommentID, ParentID, FoodID, PostedBy, Comment, PostDate)
 VALUES (1, 0, 1, 'Raofin', 'I have to say, I enjoyed every single bite of the meal.', '2022-07-17 22:27:04'),
        (2, 1, 1, 'Bill Gates',

@@ -43,7 +43,7 @@
             <div class="food-box">
                 <h2>' . $row['Title'] . '</h2>
                 <p>' . $row['Description'] . '</p>
-                <p class="food-price">Price: ' . $row['Price'] . 'tk</p>
+                <p class="food-price"><b>Price: ' . $row['Price'] . 'tk</b></p>
                 <div>
                     <a href="Payment.php?id=' . $row['FoodID'] . '"><button type="button" class="button">Buy</button></a>
                     <a href="Comment.php?id=' . $row['FoodID'] . '"><button type="button" class="button">Comment</button></a>

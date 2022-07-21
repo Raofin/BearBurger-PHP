@@ -2,4 +2,4 @@
     const HOSTNAME = 'localhost';
     const USERNAME = 'root';
     const PASSWORD = '';
-    const DATABASE = 'BearBurger';
+    const DATABASE = 'BearBurger_PHP';
