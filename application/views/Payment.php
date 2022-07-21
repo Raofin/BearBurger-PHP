@@ -5,7 +5,7 @@
 ?>
 
     <div class="form-container" id="payment-form">
-        <form class="" method="POST">
+        <form method="POST">
             <div>
                 <h1 class="payment-form-title">
                     <?php echo isset($_SESSION['foodTitle']) ? $_SESSION['foodTitle'] : 'Food Title (No food selected)'; ?>
@@ -14,7 +14,7 @@
                     <?php echo isset($_SESSION['foodDescription']) ? $_SESSION['foodDescription'] : 'Food Description (No food selected)'; ?>
                 </p>
                 <p class="payment-price">
-                    Price: <span id="price" class="white-back-text">
+                    <b>Price: </b><span id="price" class="white-back-text">
                         <?php echo isset($_SESSION['foodDescription']) ? $_SESSION['foodPrice'] : '00'; ?>tk
                     </span>
                 </p>
@@ -32,29 +32,22 @@
                 <h2 class="payment-title">Payment</h2>
                 <table class="payment-table">
                     <tr>
-                        <td>Name</td>
-                        <td>
-                            <input autofocus id="name" name="name" placeholder="Enter your name" type="text">
+                        <td><label for="name">Name</label></td>
+                        <td><input id="name" name="name" placeholder="Enter your name" type="text"
+                                   value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>">
                         </td>
                     </tr>
                     <tr>
-                        <td>Card Number</td>
-                        <td>
-                            <input id="cardNumber" name="cardNumber" placeholder="Credit card number" type="text">
-                        </td>
+                        <td><label for="card-number">Card Number</label></td>
+                        <td><input autofocus id="card-number" name="cardNumber" placeholder="0000 0000 0000 0000" type="text"></td>
                     </tr>
                     <tr>
-                        <td>Exp Date</td>
-                        <td>
-                            <input id="expDate" name="expDate" placeholder="Enter expiration date" type="text">
-                        </td>
+                        <td><label for="exp-date">Exp Date</label></td>
+                        <td><input id="exp-date" maxlength="5" name="expDate" placeholder="MM/YY" type="text" ></td>
                     </tr>
                     <tr>
-                        <td>Code CVV</td>
-                        <td>
-                            <input autocomplete="off" id="cvv" name="cvv" placeholder="Enter your code cvv"
-                                   type="password">
-                        </td>
+                        <td><label for="cvv">Code CVV</label></td>
+                        <td><input id="cvv" maxlength="3" name="cvv" placeholder="***" type="password"></td>
                     </tr>
                 </table>
             </div>
