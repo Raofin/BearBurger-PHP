@@ -17,7 +17,7 @@
     <a class="logo" href="Welcome.php"><img src="../../public/img/nav-logo.svg" alt="logo"></a>
     <nav>
         <ul class="nav-links">
-            <li><a href="./home">Home</a></li>
+            <li><a href="Home.php">Home</a></li>
             <li><a href="https://github.com/Raofin/BearBurger">GitHub</a></li>
             <li><a href="https://raofin.net">raofin.net</a></li>
         </ul>
