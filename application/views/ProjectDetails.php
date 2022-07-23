@@ -18,7 +18,7 @@
     <nav>
         <ul class="nav-links">
             <li><a href="Home.php">Home</a></li>
-            <li><a href="https://github.com/Raofin/BearBurger">GitHub</a></li>
+            <li><a href="https://github.com/Raofin/BearBurger-PHP">GitHub</a></li>
             <li><a href="https://raofin.net">raofin.net</a></li>
         </ul>
     </nav>

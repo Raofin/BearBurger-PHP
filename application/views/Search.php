@@ -1,7 +1,7 @@
 <?php require 'Header.php' ?>
 
     <div class="food-container">
-        <h1><label for="search-box">Order Your Favourite Foods!</label></h1>
+        <h1><label for="search-box">Search Foods!</label></h1>
 
         <form method="post">
             <input class="search-input-box" id="search-box"
